@@ -1,0 +1,133 @@
+# Roadmap: Yogi Assistant
+
+## Overview
+
+Yogi Assistant is an AI-powered developer portfolio presented as an interactive terminal console. The roadmap progresses from data foundation through static UI, terminal implementation, terminal polish, AI integration, and production readiness. Each phase delivers a coherent, verifiable capability that builds on the previous one, with the terminal as the core product and AI as the headline differentiator.
+
+## Phases
+
+**Phase Numbering:**
+- Integer phases (1, 2, 3): Planned milestone work
+- Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
+
+Decimal phases appear between their surrounding integers in numeric order.
+
+- [ ] **Phase 1: Foundation & Data Layer** - Project scaffold, types, portfolio data, global styles, theme
+- [ ] **Phase 2: Profile Card & Layout** - Two-panel responsive layout, glassmorphism profile card, social links, resume download
+- [ ] **Phase 3: Terminal Core** - Command parser, all 11 commands, formatted output, input handling, welcome message
+- [ ] **Phase 4: Terminal Polish** - Typing animation, command history, autocomplete, Framer Motion transitions
+- [ ] **Phase 5: AI Integration** - Claude API streaming, mode toggle, rate limiting, error handling, grounded system prompt
+- [ ] **Phase 6: Production Readiness** - SEO, Open Graph tags, easter eggs, single data source validation, error boundaries
+
+## Phase Details
+
+### Phase 1: Foundation & Data Layer
+**Goal**: The project scaffold exists with typed portfolio data, global dark theme, and layout primitives ready for all downstream components
+**Depends on**: Nothing (first phase)
+**Requirements**: LAYOUT-03, PROD-03
+**Success Criteria** (what must be TRUE):
+  1. Running `npm run dev` starts the application and renders a dark-themed page with monospace fonts and glowing accent colors
+  2. A single portfolio data file exists in TypeScript with full type definitions, containing all of Yogi's professional data (about, skills, experience, projects, achievements, certifications, contact)
+  3. The portfolio data types are importable and consumable by any component without type errors
+**Plans**: TBD
+
+Plans:
+- [ ] 01-01: Project scaffold and configuration
+- [ ] 01-02: Portfolio data layer and types
+- [ ] 01-03: Global styles, theme, and layout shell
+
+### Phase 2: Profile Card & Layout
+**Goal**: Visitors see a polished two-panel layout with a glassmorphism profile card displaying Yogi's identity, social links, and resume download -- responsive across devices
+**Depends on**: Phase 1
+**Requirements**: LAYOUT-01, LAYOUT-02, LAYOUT-04, PROF-01, PROF-02, PROF-03, PROF-04, PROF-05, ANIM-02
+**Success Criteria** (what must be TRUE):
+  1. On desktop, the page displays a two-panel layout with the profile card on the left and an empty terminal area on the right
+  2. On mobile, the profile card stacks on top with the terminal area full-width below
+  3. The profile card shows Yogi's photo (placeholder), name, role, tagline, and location with glassmorphism styling and a floating animation
+  4. Clicking the Resume button downloads a PDF file; social icons link to LinkedIn, Email, Phone, and GitHub
+**Plans**: TBD
+
+Plans:
+- [ ] 02-01: Two-panel responsive layout grid
+- [ ] 02-02: Profile card component with glassmorphism and data binding
+- [ ] 02-03: Social links, resume download, and entrance animation
+
+### Phase 3: Terminal Core
+**Goal**: Visitors can type commands into the terminal and receive fully formatted portfolio content -- the primary interaction model works end-to-end
+**Depends on**: Phase 2
+**Requirements**: TERM-01, TERM-02, TERM-03, TERM-04, TERM-07, OUT-01, OUT-02, OUT-03, OUT-04, OUT-05, OUT-06, OUT-07, OUT-08, OUT-09, OUT-10, OUT-11, OUT-12
+**Success Criteria** (what must be TRUE):
+  1. The terminal displays a header ("Yogi Dev Console v1.0"), a command input with `>` prompt and blinking cursor, and a welcome message with guidance on first load
+  2. Typing any of the 11 commands (help, about, skills, experience, projects, architecture, achievements, certifications, contact, resume, clear) produces formatted output with colored labels, structured sections, and clickable links
+  3. The terminal auto-scrolls to show new output; the `clear` command resets the terminal; the `resume` command triggers a PDF download
+  4. Typing an unrecognized command shows a helpful error message suggesting valid commands
+  5. All command output data comes from the shared portfolio data file (not hardcoded in components)
+**Plans**: TBD
+
+Plans:
+- [ ] 03-01: Terminal shell component (header, input, output area, state reducer)
+- [ ] 03-02: Command parser and registry with discriminated union output types
+- [ ] 03-03: Command output renderers (formatted display for all 11 commands)
+- [ ] 03-04: Welcome message and error handling
+
+### Phase 4: Terminal Polish
+**Goal**: The terminal feels alive and professional -- typing animations, keyboard navigation, autocomplete, and smooth transitions elevate it beyond a basic command prompt
+**Depends on**: Phase 3
+**Requirements**: TERM-05, TERM-06, ANIM-01, ANIM-03, ANIM-04
+**Success Criteria** (what must be TRUE):
+  1. Pressing arrow up/down cycles through previously entered commands in the input field
+  2. Tab completion or suggestion chips help visitors discover available commands without memorizing them
+  3. Terminal responses appear with a typing animation that can be skipped by clicking; subsequent output renders instantly
+  4. Terminal messages animate in (fade/slide) and state transitions are smooth via Framer Motion
+**Plans**: TBD
+
+Plans:
+- [ ] 04-01: Command history navigation (arrow keys)
+- [ ] 04-02: Command autocomplete and suggestion UI
+- [ ] 04-03: Typing animation with skip behavior and Framer Motion transitions
+
+### Phase 5: AI Integration
+**Goal**: Visitors can toggle to AI mode and ask natural language questions about Yogi's experience, receiving streaming responses grounded in portfolio data
+**Depends on**: Phase 4
+**Requirements**: AI-01, AI-02, AI-03, AI-04, AI-05, AI-06, SEC-01, SEC-02, SEC-03
+**Success Criteria** (what must be TRUE):
+  1. A visible toggle switches between Terminal Mode and AI Mode; the input behavior changes accordingly
+  2. In AI mode, typing a question produces a streaming response that appears token-by-token with a visible "thinking" indicator
+  3. AI responses are accurate to Yogi's portfolio data and the AI refuses to answer off-topic questions (no hallucination of unrelated content)
+  4. When the API is unavailable or rate-limited, the user sees a clear error message instead of a broken state
+  5. The API key is never exposed in client-side code; environment variables are validated on startup
+**Plans**: TBD
+
+Plans:
+- [ ] 05-01: AI mode toggle and terminal mode switching
+- [ ] 05-02: Route Handler with Claude API, system prompt, and streaming
+- [ ] 05-03: Rate limiting, error handling, and security hardening
+
+### Phase 6: Production Readiness
+**Goal**: The portfolio is ready to share publicly -- discoverable via search engines, shareable on social media, resilient to errors, and delightful with easter eggs
+**Depends on**: Phase 5
+**Requirements**: PROD-01, PROD-02, PROD-04
+**Success Criteria** (what must be TRUE):
+  1. The page has proper SEO meta tags (title, description, keywords) and Open Graph tags that produce a rich preview when shared on LinkedIn or Twitter
+  2. Easter egg commands (sudo, matrix, etc.) produce fun, memorable responses
+  3. Runtime errors in any component are caught by error boundaries and display a graceful fallback instead of a white screen
+**Plans**: TBD
+
+Plans:
+- [ ] 06-01: SEO meta tags and Open Graph social previews
+- [ ] 06-02: Easter egg commands and final polish
+- [ ] 06-03: Error boundaries and production hardening
+
+## Progress
+
+**Execution Order:**
+Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
+
+| Phase | Plans Complete | Status | Completed |
+|-------|----------------|--------|-----------|
+| 1. Foundation & Data Layer | 0/3 | Not started | - |
+| 2. Profile Card & Layout | 0/3 | Not started | - |
+| 3. Terminal Core | 0/4 | Not started | - |
+| 4. Terminal Polish | 0/3 | Not started | - |
+| 5. AI Integration | 0/3 | Not started | - |
+| 6. Production Readiness | 0/3 | Not started | - |

@@ -116,13 +116,57 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| *(populated during roadmap creation)* | | |
+| LAYOUT-01 | Phase 2 | Pending |
+| LAYOUT-02 | Phase 2 | Pending |
+| LAYOUT-03 | Phase 1 | Pending |
+| LAYOUT-04 | Phase 2 | Pending |
+| PROF-01 | Phase 2 | Pending |
+| PROF-02 | Phase 2 | Pending |
+| PROF-03 | Phase 2 | Pending |
+| PROF-04 | Phase 2 | Pending |
+| PROF-05 | Phase 2 | Pending |
+| TERM-01 | Phase 3 | Pending |
+| TERM-02 | Phase 3 | Pending |
+| TERM-03 | Phase 3 | Pending |
+| TERM-04 | Phase 3 | Pending |
+| TERM-05 | Phase 4 | Pending |
+| TERM-06 | Phase 4 | Pending |
+| TERM-07 | Phase 3 | Pending |
+| OUT-01 | Phase 3 | Pending |
+| OUT-02 | Phase 3 | Pending |
+| OUT-03 | Phase 3 | Pending |
+| OUT-04 | Phase 3 | Pending |
+| OUT-05 | Phase 3 | Pending |
+| OUT-06 | Phase 3 | Pending |
+| OUT-07 | Phase 3 | Pending |
+| OUT-08 | Phase 3 | Pending |
+| OUT-09 | Phase 3 | Pending |
+| OUT-10 | Phase 3 | Pending |
+| OUT-11 | Phase 3 | Pending |
+| OUT-12 | Phase 3 | Pending |
+| ANIM-01 | Phase 4 | Pending |
+| ANIM-02 | Phase 2 | Pending |
+| ANIM-03 | Phase 4 | Pending |
+| ANIM-04 | Phase 4 | Pending |
+| AI-01 | Phase 5 | Pending |
+| AI-02 | Phase 5 | Pending |
+| AI-03 | Phase 5 | Pending |
+| AI-04 | Phase 5 | Pending |
+| AI-05 | Phase 5 | Pending |
+| AI-06 | Phase 5 | Pending |
+| SEC-01 | Phase 5 | Pending |
+| SEC-02 | Phase 5 | Pending |
+| SEC-03 | Phase 5 | Pending |
+| PROD-01 | Phase 6 | Pending |
+| PROD-02 | Phase 6 | Pending |
+| PROD-03 | Phase 1 | Pending |
+| PROD-04 | Phase 6 | Pending |
 
 **Coverage:**
-- v1 requirements: 37 total
-- Mapped to phases: 0
-- Unmapped: 37 ⚠️
+- v1 requirements: 45 total
+- Mapped to phases: 45
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-11*
-*Last updated: 2026-03-11 after initial definition*
+*Last updated: 2026-03-11 after roadmap creation*
