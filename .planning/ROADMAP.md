@@ -29,12 +29,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   1. Running `npm run dev` starts the application and renders a dark-themed page with monospace fonts and glowing accent colors
   2. A single portfolio data file exists in TypeScript with full type definitions, containing all of Yogi's professional data (about, skills, experience, projects, achievements, certifications, contact)
   3. The portfolio data types are importable and consumable by any component without type errors
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 01-01: Project scaffold and configuration
-- [ ] 01-02: Portfolio data layer and types
-- [ ] 01-03: Global styles, theme, and layout shell
+- [ ] 01-01-PLAN.md — Scaffold Next.js project with TypeScript, Tailwind v4, shadcn/ui
+- [ ] 01-02-PLAN.md — Portfolio TypeScript interfaces and complete data file
+- [ ] 01-03-PLAN.md — Dark console theme, font loading, and visual shell
 
 ### Phase 2: Profile Card & Layout
 **Goal**: Visitors see a polished two-panel layout with a glassmorphism profile card displaying Yogi's identity, social links, and resume download -- responsive across devices
@@ -121,11 +121,11 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Data Layer | 0/3 | Not started | - |
+| 1. Foundation & Data Layer | 0/3 | Planned | - |
 | 2. Profile Card & Layout | 0/3 | Not started | - |
 | 3. Terminal Core | 0/4 | Not started | - |
 | 4. Terminal Polish | 0/3 | Not started | - |
