@@ -118,7 +118,7 @@
 |-------------|-------|--------|
 | LAYOUT-01 | Phase 2 | Pending |
 | LAYOUT-02 | Phase 2 | Pending |
-| LAYOUT-03 | Phase 1 | Pending |
+| LAYOUT-03 | Phase 1 | Complete |
 | LAYOUT-04 | Phase 2 | Pending |
 | PROF-01 | Phase 2 | Pending |
 | PROF-02 | Phase 2 | Pending |
@@ -159,7 +159,7 @@
 | SEC-03 | Phase 5 | Pending |
 | PROD-01 | Phase 6 | Pending |
 | PROD-02 | Phase 6 | Pending |
-| PROD-03 | Phase 1 | Pending |
+| PROD-03 | Phase 1 | Complete |
 | PROD-04 | Phase 6 | Pending |
 
 **Coverage:**
