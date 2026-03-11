@@ -1,3 +1,5 @@
+import { ProfileCard } from "@/components/profile-card";
+
 export default function Home() {
   return (
     <main className="min-h-screen p-4 lg:p-8">
@@ -7,7 +9,7 @@ export default function Home() {
           <div className="relative">
             {/* Glow backdrop for glassmorphism visibility */}
             <div className="absolute inset-0 bg-linear-to-br from-glow-cyan/10 via-transparent to-glow-purple/10 rounded-3xl blur-2xl" />
-            {/* ProfileCard goes here - Plan 02-03 */}
+            <ProfileCard />
           </div>
         </aside>
 
