@@ -45,12 +45,12 @@ Plans:
   2. On mobile, the profile card stacks on top with the terminal area full-width below
   3. The profile card shows Yogi's photo (placeholder), name, role, tagline, and location with glassmorphism styling and a floating animation
   4. Clicking the Resume button downloads a PDF file; social icons link to LinkedIn, Email, Phone, and GitHub
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 02-01: Two-panel responsive layout grid
-- [ ] 02-02: Profile card component with glassmorphism and data binding
-- [ ] 02-03: Social links, resume download, and entrance animation
+- [ ] 02-01-PLAN.md — Install motion package and create two-panel responsive grid layout
+- [ ] 02-02-PLAN.md — Brand icon SVGs, social links component, and resume PDF placeholder
+- [ ] 02-03-PLAN.md — Profile card with glassmorphism, data binding, animations, and page wiring
 
 ### Phase 3: Terminal Core
 **Goal**: Visitors can type commands into the terminal and receive fully formatted portfolio content -- the primary interaction model works end-to-end
