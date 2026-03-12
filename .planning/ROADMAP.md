@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation & Data Layer** - Project scaffold, types, portfolio data, global styles, theme
 - [x] **Phase 2: Profile Card & Layout** - Two-panel responsive layout, interactive 3D badge card, social links, resume download
-- [ ] **Phase 3: Terminal Core** - Command parser, all 11 commands, formatted output, input handling, welcome message
+- [x] **Phase 3: Terminal Core** - Command parser, all 11 commands, formatted output, input handling, welcome message
 - [ ] **Phase 4: Terminal Polish** - Typing animation, command history, autocomplete, Framer Motion transitions
 - [ ] **Phase 5: AI Integration** - Claude API streaming, mode toggle, rate limiting, error handling, grounded system prompt
 - [ ] **Phase 6: Production Readiness** - SEO, Open Graph tags, easter eggs, single data source validation, error boundaries
@@ -65,10 +65,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 03-01-PLAN.md — Terminal types, command registry, and state reducer (logic layer)
-- [ ] 03-02-PLAN.md — Terminal shell, input, and output dispatcher (UI shell)
-- [ ] 03-03-PLAN.md — All 11 command output renderers (formatted display)
-- [ ] 03-04-PLAN.md — Wire renderers into dispatcher and integrate terminal into page
+- [x] 03-01-PLAN.md — Terminal types, command registry, and state reducer (logic layer)
+- [x] 03-02-PLAN.md — Terminal shell, input, and output dispatcher (UI shell)
+- [x] 03-03-PLAN.md — All 11 command output renderers (formatted display)
+- [x] 03-04-PLAN.md — Wire renderers into dispatcher and integrate terminal into page
 
 ### Phase 4: Terminal Polish
 **Goal**: The terminal feels alive and professional -- typing animations, keyboard navigation, autocomplete, and smooth transitions elevate it beyond a basic command prompt
@@ -127,7 +127,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 |-------|----------------|--------|-----------|
 | 1. Foundation & Data Layer | 3/3 | ✓ Complete | 2026-03-11 |
 | 2. Profile Card & Layout | 3/3 | ✓ Complete | 2026-03-12 |
-| 3. Terminal Core | 0/4 | Not started | - |
+| 3. Terminal Core | 4/4 | ✓ Complete | 2026-03-12 |
 | 4. Terminal Polish | 0/3 | Not started | - |
 | 5. AI Integration | 0/3 | Not started | - |
 | 6. Production Readiness | 0/3 | Not started | - |

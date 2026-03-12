@@ -22,28 +22,28 @@
 
 ### Terminal Core
 
-- [ ] **TERM-01**: Terminal header displaying "Yogi Dev Console v1.0"
-- [ ] **TERM-02**: Command input with `>` prompt and blinking cursor
-- [ ] **TERM-03**: Command parser supporting all 11 commands: help, about, skills, experience, projects, architecture, achievements, certifications, contact, resume, clear
-- [ ] **TERM-04**: Scrollable output window with auto-scroll on new content
+- [x] **TERM-01**: Terminal header displaying "Yogi Dev Console v1.0"
+- [x] **TERM-02**: Command input with `>` prompt and blinking cursor
+- [x] **TERM-03**: Command parser supporting all 11 commands: help, about, skills, experience, projects, architecture, achievements, certifications, contact, resume, clear
+- [x] **TERM-04**: Scrollable output window with auto-scroll on new content
 - [ ] **TERM-05**: Command history navigation with arrow up/down keys
 - [ ] **TERM-06**: Command autocomplete/suggestions (tab completion or suggestion chips)
-- [ ] **TERM-07**: Welcome message with onboarding guidance for first-time visitors
+- [x] **TERM-07**: Welcome message with onboarding guidance for first-time visitors
 
 ### Terminal Output
 
-- [ ] **OUT-01**: `help` — display all available commands with descriptions
-- [ ] **OUT-02**: `about` — display professional summary (name, role, experience overview, current focus)
-- [ ] **OUT-03**: `skills` — display skills grouped by category (Languages, Frameworks, Cloud, AI & Data, DevOps, Databases)
-- [ ] **OUT-04**: `experience` — display career timeline with company, role, dates, key contributions
-- [ ] **OUT-05**: `projects` — display project cards (Autowire.ai with description, features, architecture, tech stack, live link)
-- [ ] **OUT-06**: `architecture` — display ASCII architecture diagram for Autowire.ai
-- [ ] **OUT-07**: `achievements` — display key achievements with metrics
-- [ ] **OUT-08**: `certifications` — display certifications and in-progress certifications
-- [ ] **OUT-09**: `contact` — display contact details (Email, LinkedIn, GitHub)
-- [ ] **OUT-10**: `resume` — trigger resume PDF download
-- [ ] **OUT-11**: `clear` — clear terminal history
-- [ ] **OUT-12**: Formatted output with colored labels, structured sections, clickable links
+- [x] **OUT-01**: `help` — display all available commands with descriptions
+- [x] **OUT-02**: `about` — display professional summary (name, role, experience overview, current focus)
+- [x] **OUT-03**: `skills` — display skills grouped by category (Languages, Frameworks, Cloud, AI & Data, DevOps, Databases)
+- [x] **OUT-04**: `experience` — display career timeline with company, role, dates, key contributions
+- [x] **OUT-05**: `projects` — display project cards (Autowire.ai with description, features, architecture, tech stack, live link)
+- [x] **OUT-06**: `architecture` — display ASCII architecture diagram for Autowire.ai
+- [x] **OUT-07**: `achievements` — display key achievements with metrics
+- [x] **OUT-08**: `certifications` — display certifications and in-progress certifications
+- [x] **OUT-09**: `contact` — display contact details (Email, LinkedIn, GitHub)
+- [x] **OUT-10**: `resume` — trigger resume PDF download
+- [x] **OUT-11**: `clear` — clear terminal history
+- [x] **OUT-12**: Formatted output with colored labels, structured sections, clickable links
 
 ### Animations
 
@@ -125,25 +125,25 @@
 | PROF-03 | Phase 2 | Complete |
 | PROF-04 | Phase 2 | Complete |
 | PROF-05 | Phase 2 | Complete |
-| TERM-01 | Phase 3 | Pending |
-| TERM-02 | Phase 3 | Pending |
-| TERM-03 | Phase 3 | Pending |
-| TERM-04 | Phase 3 | Pending |
+| TERM-01 | Phase 3 | Complete |
+| TERM-02 | Phase 3 | Complete |
+| TERM-03 | Phase 3 | Complete |
+| TERM-04 | Phase 3 | Complete |
 | TERM-05 | Phase 4 | Pending |
 | TERM-06 | Phase 4 | Pending |
-| TERM-07 | Phase 3 | Pending |
-| OUT-01 | Phase 3 | Pending |
-| OUT-02 | Phase 3 | Pending |
-| OUT-03 | Phase 3 | Pending |
-| OUT-04 | Phase 3 | Pending |
-| OUT-05 | Phase 3 | Pending |
-| OUT-06 | Phase 3 | Pending |
-| OUT-07 | Phase 3 | Pending |
-| OUT-08 | Phase 3 | Pending |
-| OUT-09 | Phase 3 | Pending |
-| OUT-10 | Phase 3 | Pending |
-| OUT-11 | Phase 3 | Pending |
-| OUT-12 | Phase 3 | Pending |
+| TERM-07 | Phase 3 | Complete |
+| OUT-01 | Phase 3 | Complete |
+| OUT-02 | Phase 3 | Complete |
+| OUT-03 | Phase 3 | Complete |
+| OUT-04 | Phase 3 | Complete |
+| OUT-05 | Phase 3 | Complete |
+| OUT-06 | Phase 3 | Complete |
+| OUT-07 | Phase 3 | Complete |
+| OUT-08 | Phase 3 | Complete |
+| OUT-09 | Phase 3 | Complete |
+| OUT-10 | Phase 3 | Complete |
+| OUT-11 | Phase 3 | Complete |
+| OUT-12 | Phase 3 | Complete |
 | ANIM-01 | Phase 4 | Pending |
 | ANIM-02 | Phase 2 | Complete |
 | ANIM-03 | Phase 4 | Pending |
@@ -169,4 +169,4 @@
 
 ---
 *Requirements defined: 2026-03-11*
-*Last updated: 2026-03-11 after roadmap creation*
+*Last updated: 2026-03-12 after Phase 3 completion*
