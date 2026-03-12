@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-03-11)
 ## Current Position
 
 Phase: 4 of 6 (Terminal Polish)
-Plan: 0 of 3 in current phase
-Status: Not started
-Last activity: 2026-03-12 -- Completed Phase 3 (Terminal Core)
+Plan: 1 of 3 in current phase
+Status: In progress
+Last activity: 2026-03-12 -- Completed 04-01-PLAN.md (Command History)
 
-Progress: [██████████░░░░░░░░░] 10/19 plans (~53%)
+Progress: [███████████░░░░░░░░] 11/19 plans (~58%)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 10
+- Total plans completed: 11
 - Average duration: 1.8 min
-- Total execution time: 0.25 hours
+- Total execution time: 0.28 hours
 
 **By Phase:**
 
@@ -32,7 +32,7 @@ Progress: [██████████░░░░░░░░░] 10/19 plan
 | 03 Terminal Core | 4/4 | 4 min | 1.0 min |
 
 **Recent Trend:**
-- Last 5 plans: 02-03 (manual), 03-01 (1 min), 03-02 (1 min), 03-03 (1 min), 03-04 (1 min)
+- Last 5 plans: 03-01 (1 min), 03-02 (1 min), 03-03 (1 min), 03-04 (1 min), 04-01 (2 min)
 - Trend: stable/fast
 
 *Updated after each plan completion*
@@ -61,6 +61,8 @@ Recent decisions affecting current work:
 - 03-02: Native browser caret over custom block cursor; placeholder renderers for all output types until Plan 03
 - 03-03: CSS grid for help table alignment; terminal-style [x]/[~] status badges for certifications
 - 03-04: Kept ErrorOutput inline in dispatcher (simple single-div, no separate file needed)
+- 04-01: History index uses -1 sentinel for "not browsing"; SET_INPUT resets historyIndex but not savedInput
+- 04-01: Clear command stored in commandHistory (users may want to recall it)
 
 ### Pending Todos
 
@@ -75,5 +77,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-12
-Stopped at: Completed Phase 3 (Terminal Core) -- verified, all 4 plans executed
+Stopped at: Completed 04-01-PLAN.md (Command History)
 Resume file: None
