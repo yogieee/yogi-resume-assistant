@@ -12,7 +12,7 @@ See: .planning/PROJECT.md (updated 2026-03-11)
 Phase: 4 of 6 (Terminal Polish)
 Plan: 3 of 3 in current phase
 Status: Phase complete
-Last activity: 2026-03-12 -- Completed 04-03-PLAN.md (Output Animations)
+Last activity: 2026-03-12 -- Completed 04-02-PLAN.md (Command Autocomplete)
 
 Progress: [█████████████░░░░░░] 13/19 plans (~68%)
 
@@ -65,6 +65,8 @@ Recent decisions affecting current work:
 - 04-01: History index uses -1 sentinel for "not browsing"; SET_INPUT resets historyIndex but not savedInput
 - 04-01: Clear command stored in commandHistory (users may want to recall it)
 - 04-03: Sequential typing for welcome (each line after previous completes); only pure-text outputs get typing
+- 04-02: Suggestions clear on every keystroke; only set on Tab with multiple matches (avoids stale state)
+- 04-02: Exact matches excluded from getCompletions (typing "help" + Tab shows nothing)
 - 04-03: No exit animations on AnimatePresence -- clear resets instantly
 
 ### Pending Todos
@@ -80,5 +82,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-12
-Stopped at: Completed 04-03-PLAN.md (Output Animations) -- Phase 4 complete
+Stopped at: Completed 04-02-PLAN.md (Command Autocomplete) -- Phase 4 fully complete
 Resume file: None
