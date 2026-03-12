@@ -23,7 +23,7 @@ export function TerminalShell() {
     const latest = state.history[state.history.length - 1];
     if (latest?.output.type === "resume") {
       const link = document.createElement("a");
-      link.href = "/resume.pdf";
+      link.href = "/Yoganandgovind-resume.pdf";
       link.download = "Yoganand_Govind_Resume.pdf";
       document.body.appendChild(link);
       link.click();
@@ -70,13 +70,14 @@ export function TerminalShell() {
 
       {/* Scrollable terminal flow */}
       <div className="flex-1 overflow-y-auto p-4 space-y-3">
-        <AnimatePresence mode="popLayout">
+        <AnimatePresence>
           {state.history.map((entry) => (
             <motion.div
               key={entry.id}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.15, ease: "easeOut" }}
+              layout={false}
             >
               <TerminalOutputEntry entry={entry} />
             </motion.div>

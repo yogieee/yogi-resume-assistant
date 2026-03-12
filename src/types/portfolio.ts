@@ -45,7 +45,19 @@ export interface Achievement {
 
 export interface Certification {
   name: string;
-  status: "completed" | "in-progress";
+  status: "Active" | "Inactive" | "In Progress";
+  period?: string;
+}
+
+export interface Education {
+  degree: string;
+  year: string;
+  institution: string;
+}
+
+export interface Interests {
+  learning: string;
+  hobbies: string[];
 }
 
 export interface ContactInfo {
@@ -63,4 +75,6 @@ export interface PortfolioData {
   achievements: Achievement[];
   certifications: Certification[];
   contact: ContactInfo[];
+  education: Education[];
+  interests: Interests;
 }

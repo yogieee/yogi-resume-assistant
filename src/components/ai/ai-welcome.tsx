@@ -6,7 +6,7 @@ interface AiWelcomeProps {
 
 const starters = [
   "What are Yogi's key skills?",
-  "Tell me about Autowire.ai",
+  "Tell me about Autowired.ai",
   "What cloud technologies does he use?",
   "Why hire Yoganand?",
   "Start a project discussion",

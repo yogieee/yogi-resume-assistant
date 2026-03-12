@@ -2,7 +2,7 @@
 
 ## What This Is
 
-An AI-powered developer portfolio website that presents Yogananda Govind's professional profile as an interactive developer console. Recruiters and engineers explore experience, skills, and projects through a terminal-style interface with an optional AI chat mode. Deployed on Vercel.
+An AI-powered developer portfolio website that presents Yoganand Govind's professional profile as an interactive developer console. Recruiters and engineers explore experience, skills, and projects through a terminal-style interface with an AI chat mode powered by Claude. Features an interactive 3D badge card, intent-based AI routing, and response caching. Deployed on Vercel.
 
 ## Core Value
 
@@ -12,24 +12,20 @@ The terminal interface must let visitors discover Yogi's full professional profi
 
 ### Validated
 
-(None yet — ship to validate)
+- Two-panel layout with interactive 3D badge card + terminal — v1.0
+- Terminal with 13 commands (help, about, skills, experience, projects, architecture, achievements, certifications, contact, hire, resume, clear + easter eggs) — v1.0
+- Terminal UX: typing animation, command history, autocomplete, auto-scroll — v1.0
+- AI Mode with Claude streaming, intent routing, response caching — v1.0
+- SEO, Open Graph with dynamic OG image, error boundaries — v1.0
+- Portfolio data synced with resume (education, certifications, full work history) — v1.0
 
 ### Active
 
-- [ ] Two-panel layout: profile card (left) + terminal (right)
-- [ ] Glassmorphism floating profile card with name, role, tagline, location, social links, resume download
-- [ ] Interactive terminal with command parser supporting: help, about, skills, experience, projects, architecture, achievements, certifications, contact, resume, clear
-- [ ] Terminal UX: typing animation, command history (arrow keys), blinking cursor, auto-scroll, formatted output
-- [ ] All portfolio data rendered through terminal command outputs
-- [ ] AI Mode toggle: send questions to Claude API endpoint grounded with portfolio data
-- [ ] Dark theme with glowing accents, monospace fonts, engineering console aesthetic
-- [ ] Responsive design: mobile stacks profile on top, terminal full-width
-- [ ] Framer Motion animations: terminal messages, profile card float, smooth transitions
-- [ ] Resume PDF download from public folder
+(None — next milestone requirements TBD)
 
 ### Out of Scope
 
-- RAG / vector embeddings — data fits in context window for v1, structured for future RAG
+- RAG / vector embeddings — data fits in context window, structured for future RAG
 - CMS or admin panel — portfolio data is static in code
 - Authentication — public portfolio, no login
 - Blog or content management — pure portfolio focus
@@ -37,41 +33,46 @@ The terminal interface must let visitors discover Yogi's full professional profi
 
 ## Context
 
-**Owner:** Yogananda Govind — Senior Software Engineer with 12+ years experience, specializing in AI & Cloud (AWS). Creator of Autowire.ai (document extraction SaaS).
+**Owner:** Yoganand Govind — Senior Software Developer with 12+ years experience, specializing in Cloud & AI Platform Engineering (AWS). Creator of Autowired.ai (document extraction SaaS).
 
-**Current role:** Senior Software Engineer at Mphasis UK Limited, London (2019–Present). Enterprise welfare platform for UK Government using IBM Cúram SPM.
+**Current role:** Senior Software Engineer at Mphasis UK Limited, London (Jan 2019–Present). Enterprise welfare platform for UK Government using IBM Cúram SPM. Previous: Software Developer at Mphasis India (2014–2018).
 
-**Key project:** Autowire.ai — SaaS platform for AI-powered document extraction. Next.js + AWS Lambda + Textract + Bedrock + DynamoDB + S3.
+**Key project:** Autowired.ai — SaaS platform for AI-powered document extraction. Next.js 15 + AWS Lambda + Textract + Bedrock Data Automation + DynamoDB + S3.
+
+**Current codebase:** 3,689 lines TypeScript/TSX across 125 files. Tech stack: Next.js 16, React, TypeScript, Tailwind v4, shadcn/ui, Motion, React Three Fiber, Vercel AI SDK v6, Claude Haiku 4.5.
 
 **Portfolio data includes:**
-- Professional summary and about
-- Skills: Languages, Frameworks, Cloud (AWS), AI & Data, DevOps, Databases
-- Experience: Mphasis UK Limited timeline with key contributions
-- Projects: Autowire.ai with architecture details
-- Achievements: 90% processing time reduction, 40% cost optimization, multi-tenant SaaS, 15+ Lambda services
-- Certifications: AWS Solutions Architect Associate, GenAI (in progress)
-- Contact: LinkedIn (yoganandgovind), Email (Yoganand.Govind@gmail.com), Phone (+44 07365558999), GitHub (URL TBD)
-
-**AI Mode approach:** Claude API via Anthropic SDK. Full portfolio data injected as system context. Temperature 0. Constrained to only answer about professional experience. Data files structured per section for future RAG readiness.
+- Professional summary, education (MCA, BCA — Bangalore University), interests
+- Skills: 8 categories (Languages, Frontend, Backend, Cloud/AWS, AI & Data, Databases, DevOps, Enterprise)
+- Experience: Mphasis UK (2019–Present) + Mphasis India (2014–2018) with 13 contributions
+- Projects: Autowired.ai with full architecture and tech stack
+- Achievements: 90% processing speedup, 40% cost optimization, 15+ Lambda services
+- Certifications: AWS SA Associate (Active), AWS Developer (Inactive), IBM Curam V6.0.4, AWS GenAI (In Progress)
+- Contact: Phone, Email, LinkedIn, GitHub
 
 ## Constraints
 
-- **Tech Stack**: Next.js 14+ (App Router), React, TypeScript, TailwindCSS, shadcn/ui, Framer Motion — per user spec
-- **AI Provider**: Claude API (Anthropic SDK) — chosen for quality and simplicity with Vercel
-- **Deployment**: Vercel — natural fit for Next.js
-- **Design**: Dark theme, terminal/console aesthetic, glassmorphism, monospace fonts
-- **Profile Photo**: Placeholder avatar for v1 (user will provide image later)
-- **Resume**: PDF file in public folder
+- **Tech Stack**: Next.js 16 (App Router), React, TypeScript, Tailwind v4, shadcn/ui, Motion
+- **AI Provider**: Claude Haiku 4.5 via Vercel AI SDK v6
+- **Deployment**: Vercel
+- **Design**: Dark theme, terminal/console aesthetic, monospace fonts, OKLCH glow accents
+- **Profile Photo**: Placeholder avatar (user will provide image later)
+- **Resume**: PDF in public folder (Yoganandgovind-resume.pdf)
 
 ## Key Decisions
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Claude API for AI mode | Best conversational quality, simple Vercel integration, grounded with portfolio data | — Pending |
-| Full context injection over RAG | Portfolio data ~3K tokens, fits in context window, simpler v1 | — Pending |
-| Vercel deployment | Natural Next.js host, free tier, simple CI/CD | — Pending |
-| Placeholder profile photo | User will provide image later | — Pending |
-| Data files per section | Modular data layer, RAG-ready structure for future | — Pending |
+| Claude Haiku 4.5 for AI mode | Cost-efficient, good quality for portfolio Q&A | Good |
+| Three-tier response system (static/cache/API) | Eliminates API calls for 80%+ of questions | Good |
+| Intent router with keyword matching | Zero-cost classification, no AI call needed | Good |
+| React Three Fiber + Rapier for 3D badge | Replaced glassmorphism card, more memorable | Good |
+| Vercel AI SDK v6 (not raw Anthropic SDK) | Streaming, caching middleware, useChat hook | Good |
+| Tailwind v4 CSS-based config | No tailwind.config.ts, OKLCH variables | Good |
+| Full context injection over RAG | Portfolio data fits in context window (~3K tokens) | Good |
+| Vercel deployment | Natural Next.js host, free tier, simple CI/CD | Good |
+| reactStrictMode: false | Prevents WebGL Context Lost on Canvas double-mount | Revisit |
+| Dynamic OG image via ImageResponse | Terminal-themed, no static image needed | Good |
 
 ---
-*Last updated: 2026-03-11 after initialization*
+*Last updated: 2026-03-12 after v1.0 milestone*

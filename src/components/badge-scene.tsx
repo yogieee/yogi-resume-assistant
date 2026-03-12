@@ -63,9 +63,9 @@ function Band({ maxSpeed = 50, minSpeed = 10, canvasHovered = false }) {
   const [dragged, drag] = useState<THREE.Vector3 | false>(false);
   const [hovered, hover] = useState(false);
 
-  useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 1]) // prettier-ignore
-  useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 1]) // prettier-ignore
-  useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1]) // prettier-ignore
+  useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 0.8]) // prettier-ignore
+  useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 0.8]) // prettier-ignore
+  useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 0.8]) // prettier-ignore
   useSphericalJoint(j3, card, [[0, 0, 0], [0, 1.45, 0]]) // prettier-ignore
 
   useEffect(() => {
@@ -92,7 +92,10 @@ function Band({ maxSpeed = 50, minSpeed = 10, canvasHovered = false }) {
       const swayX = Math.sin(t * 0.8) * 0.4;
       const swayZ = Math.cos(t * 0.6) * 0.15;
       card.current.wakeUp();
-      card.current.applyImpulse({ x: swayX * delta, y: 0, z: swayZ * delta }, true);
+      card.current.applyImpulse(
+        { x: swayX * delta, y: 0, z: swayZ * delta },
+        true,
+      );
 
       // Slight tilt opposite to mouse position (only when mouse is over canvas)
       if (canvasHovered) {
@@ -142,17 +145,17 @@ function Band({ maxSpeed = 50, minSpeed = 10, canvasHovered = false }) {
     <>
       <group position={[0, 4, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
-        <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}>
+        <RigidBody position={[0.8, 0, 0]} ref={j1} {...segmentProps}>
           <BallCollider args={[0.1]} />
         </RigidBody>
-        <RigidBody position={[1, 0, 0]} ref={j2} {...segmentProps}>
+        <RigidBody position={[1.6, 0, 0]} ref={j2} {...segmentProps}>
           <BallCollider args={[0.1]} />
         </RigidBody>
-        <RigidBody position={[1.5, 0, 0]} ref={j3} {...segmentProps}>
+        <RigidBody position={[2.4, 0, 0]} ref={j3} {...segmentProps}>
           <BallCollider args={[0.1]} />
         </RigidBody>
         <RigidBody
-          position={[2, 0, 0]}
+          position={[2.6, 0, 0]}
           ref={card}
           {...segmentProps}
           type={dragged ? "kinematicPosition" : "dynamic"}
@@ -271,10 +274,15 @@ export function BadgeScene() {
       onPointerEnter={() => setCanvasHovered(true)}
       onPointerLeave={() => setCanvasHovered(false)}
     >
-      <Canvas camera={{ position: [0, 0, 13], fov: 25 }} gl={{ stencil: true }}>
+      <Canvas camera={{ position: [0, 2, 13], fov: 25 }} gl={{ stencil: true }}>
         <ambientLight intensity={1} />
         <directionalLight position={[5, 5, 5]} intensity={0.5} />
-        <spotLight position={[-5, 8, 10]} intensity={0.8} angle={0.5} penumbra={1} />
+        <spotLight
+          position={[-5, 8, 10]}
+          intensity={0.8}
+          angle={0.5}
+          penumbra={1}
+        />
         <Suspense fallback={null}>
           <Physics gravity={[0, -40, 0]} timeStep={1 / 60}>
             <Band canvasHovered={canvasHovered} />

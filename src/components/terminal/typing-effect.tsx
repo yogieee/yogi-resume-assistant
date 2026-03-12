@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { animate } from "motion/react";
 
 interface TypingEffectProps {
@@ -16,6 +16,8 @@ export function TypingEffect({
 }: TypingEffectProps) {
   const [charCount, setCharCount] = useState(0);
   const [done, setDone] = useState(false);
+  const onCompleteRef = useRef(onComplete);
+  onCompleteRef.current = onComplete;
 
   useEffect(() => {
     const duration = children.length / speed;
@@ -25,19 +27,19 @@ export function TypingEffect({
       onUpdate: (v) => setCharCount(Math.round(v)),
       onComplete: () => {
         setDone(true);
-        onComplete?.();
+        onCompleteRef.current?.();
       },
     });
     return () => controls.stop();
-  }, [children, speed, onComplete]);
+  }, [children, speed]);
 
   const skip = useCallback(() => {
     if (!done) {
       setCharCount(children.length);
       setDone(true);
-      onComplete?.();
+      onCompleteRef.current?.();
     }
-  }, [done, children.length, onComplete]);
+  }, [done, children.length]);
 
   return (
     <span

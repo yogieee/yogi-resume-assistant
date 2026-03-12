@@ -9,7 +9,7 @@
 
 - [x] **LAYOUT-01**: Two-panel layout — profile card (left) + terminal (right) on desktop
 - [x] **LAYOUT-02**: Responsive stacking — profile card moves to top, terminal full-width on mobile
-- [ ] **LAYOUT-03**: Dark theme with glowing accents, monospace fonts, engineering console aesthetic
+- [x] **LAYOUT-03**: Dark theme with glowing accents, monospace fonts, engineering console aesthetic
 - [x] **LAYOUT-04**: Interactive 3D badge card with rounded corners, physics-based floating animation
 
 ### Profile Card
@@ -69,10 +69,10 @@
 
 ### Production
 
-- [ ] **PROD-01**: SEO meta tags (title, description, keywords)
-- [ ] **PROD-02**: Open Graph tags for social link previews (LinkedIn, Twitter)
-- [ ] **PROD-03**: Single portfolio data source feeding all consumers (profile card, commands, AI context)
-- [ ] **PROD-04**: Easter egg commands (e.g., sudo, matrix) for memorable visitor experience
+- [x] **PROD-01**: SEO meta tags (title, description, keywords)
+- [x] **PROD-02**: Open Graph tags for social link previews (LinkedIn, Twitter)
+- [x] **PROD-03**: Single portfolio data source feeding all consumers (profile card, commands, AI context)
+- [x] **PROD-04**: Easter egg commands (e.g., sudo, matrix) for memorable visitor experience
 
 ## v2 Requirements
 
@@ -157,10 +157,10 @@
 | SEC-01 | Phase 5 | Complete |
 | SEC-02 | Phase 5 | Complete |
 | SEC-03 | Phase 5 | Complete |
-| PROD-01 | Phase 6 | Pending |
-| PROD-02 | Phase 6 | Pending |
+| PROD-01 | Phase 6 | Complete |
+| PROD-02 | Phase 6 | Complete |
 | PROD-03 | Phase 1 | Complete |
-| PROD-04 | Phase 6 | Pending |
+| PROD-04 | Phase 6 | Complete |
 
 **Coverage:**
 - v1 requirements: 45 total

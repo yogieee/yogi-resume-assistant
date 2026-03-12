@@ -10,9 +10,9 @@ type KnownIntent = Exclude<Intent, "novel">;
  */
 const responseBuilders: Record<KnownIntent, () => string> = {
   about: () => {
-    const { name, role, summary } = portfolio.about;
+    const { name, role, location, summary } = portfolio.about;
     return [
-      `I'm ${name}, ${role}.`,
+      `I'm ${name}, ${role}, based in ${location}.`,
       "",
       summary.trim(),
       "",
@@ -69,15 +69,41 @@ const responseBuilders: Record<KnownIntent, () => string> = {
 
   architecture: () => {
     const project = portfolio.projects[0];
-    const flow = project.architecture.map((step, i) => `${i + 1}. ${step}`).join("\n");
     return [
       `Here's the architecture behind **${project.name}**:`,
       "",
-      flow,
+      "```",
+      "  [Client Browser]",
+      "        |",
+      "  [Next.js 15 / Vercel]",
+      "        |",
+      "  [API Gateway] ---- REST endpoints",
+      "        |",
+      "  [AWS Lambda x15+] ---- microservices",
+      "      /    |    \\",
+      "     /     |     \\",
+      "  [S3]  [DynamoDB]  [SQS]",
+      "   |    (single-table) |",
+      "   v                   v",
+      "  [Textract]     [Step Functions]",
+      "   |                   |",
+      "   v                   v",
+      "  [Bedrock Data    [Batch Processing",
+      "   Automation]      Orchestration]",
+      "        \\             /",
+      "         \\           /",
+      "       [CloudWatch + SNS + SES]",
+      "         (monitoring & alerts)",
+      "```",
+      "",
+      "**Design Principles:**",
+      "- Serverless-first (zero idle cost)",
+      "- Event-driven async processing (SQS + Step Functions)",
+      "- Single-table DynamoDB design for multi-tenant isolation",
+      "- Infrastructure as code with AWS CDK",
+      "- Hybrid deployment: Vercel (frontend) + AWS CDK (backend)",
       "",
       `**Tech Stack:** ${project.techStack.join(", ")}`,
-      "",
-      "My design principles: serverless-first, event-driven, single-table DynamoDB, infrastructure as code with CDK.",
       "",
       "You can also ask about my **projects**, **skills**, or **experience**.",
     ].join("\n");
@@ -96,7 +122,7 @@ const responseBuilders: Record<KnownIntent, () => string> = {
 
   certifications: () => {
     const lines = portfolio.certifications.map(
-      (c) => `- **${c.name}** (${c.status})`
+      (c) => `- **${c.name}** (${c.status})${c.period ? ` -- ${c.period}` : ""}`
     );
     return [
       "Here are my certifications:",
@@ -119,28 +145,37 @@ const responseBuilders: Record<KnownIntent, () => string> = {
   },
 
   hire: () => {
-    const { name } = portfolio.about;
-    const certActive = portfolio.certifications
-      .filter((c) => c.status === "Active")
-      .map((c) => c.name);
+    const email = portfolio.contact.find((c) => c.type === "email");
+    const linkedin = portfolio.contact.find((c) => c.type === "linkedin");
     return [
-      `Here's why you should consider working with ${name}:`,
+      "Absolutely -- I'd love to discuss your project.",
       "",
-      "- **12+ years** of enterprise software engineering experience",
-      "- **AWS cloud-native** architecture specialist (Lambda, DynamoDB, Step Functions, CDK)",
-      "- **AI in production** -- built Autowire.ai, an AI-powered document processing SaaS platform",
-      "- **Enterprise systems** -- extensive IBM Curam SPM background for UK Government welfare services",
-      certActive.length > 0
-        ? `- **AWS Certified** -- ${certActive.join(", ")}`
-        : "",
-      "- Full-stack capabilities: Java, TypeScript, React, Next.js, Spring Boot",
+      "I specialise in **cloud architecture**, **AI-powered platforms**, and **full-stack SaaS development** on AWS. Whether it's a greenfield build or modernising an existing system, I can help.",
       "",
-      "Specializations: cloud architecture, AI platforms, enterprise systems, serverless microservices.",
+      "Let's connect:",
+      email ? `- **Email:** ${email.url}` : "",
+      linkedin ? `- **LinkedIn:** ${linkedin.url}` : "",
       "",
-      "You can also ask about my **projects**, **experience**, or **contact** details.",
+      "Ask about my **projects** or **architecture** to see examples of what I've built.",
     ]
       .filter(Boolean)
       .join("\n");
+  },
+
+  help: () => {
+    return [
+      "I'm Yogi AI, the portfolio assistant for Yoganand Govind. Here are some things you can ask me:",
+      "",
+      "- **\"Tell me about yourself\"** -- who Yoganand is and what he does",
+      "- **\"What are your skills?\"** -- full technical stack breakdown",
+      "- **\"Tell me about Autowired\"** -- the AI SaaS platform he built",
+      "- **\"Explain the architecture\"** -- system design with diagrams",
+      "- **\"What is your experience?\"** -- career history and enterprise work",
+      "- **\"Show certifications\"** -- AWS and IBM certifications",
+      "- **\"Are you available for projects?\"** -- collaboration and contact info",
+      "",
+      "Try starting with **\"What projects have you built?\"** for the best overview.",
+    ].join("\n");
   },
 };
 

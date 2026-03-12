@@ -56,6 +56,9 @@ export const cachingMiddleware: LanguageModelV3Middleware = {
     }
 
     // Cache miss -- call model, capture chunks, cache result
+    if (process.env.NODE_ENV === "development") {
+      console.log(`[cache-miss] "${userMessage}"`);
+    }
     const { stream, ...rest } = await doStream();
     const chunks: LanguageModelV3StreamPart[] = [];
 

@@ -9,12 +9,14 @@ export function CertificationsOutput() {
           <div key={cert.name} className="flex gap-2">
             <span
               className={
-                cert.status === "completed"
+                cert.status === "Active"
                   ? "text-glow-green"
-                  : "text-glow-amber"
+                  : cert.status === "Inactive"
+                    ? "text-console-text-dim"
+                    : "text-glow-amber"
               }
             >
-              {cert.status === "completed" ? "[x]" : "[~]"}
+              {cert.status === "Active" ? "[x]" : cert.status === "Inactive" ? "[-]" : "[~]"}
             </span>
             <span className="text-console-text">{cert.name}</span>
           </div>

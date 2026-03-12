@@ -8,18 +8,19 @@ import { portfolio } from "@/data/portfolio";
 
 export function ProfileActions() {
   return (
-    <div className="flex items-center justify-between gap-6">
+    <div className="flex items-center justify-between gap-4">
       <SocialLinks contacts={portfolio.contact} />
       <a
-        href="/resume.pdf"
+        href="/Yoganandgovind-resume.pdf"
         download
         className={buttonVariants({
           variant: "outline",
-          className: "gap-2 shrink-0",
+          size: "sm",
+          className: "gap-1.5 shrink-0 h-7 text-xs",
         })}
       >
-        <Download className="size-4" />
-        Download Resume
+        <Download className="size-3" />
+        Resume
       </a>
     </div>
   );

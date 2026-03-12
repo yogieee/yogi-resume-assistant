@@ -1,5 +1,6 @@
 "use client";
 
+import { memo } from "react";
 import type { TerminalEntry, CommandOutput } from "@/lib/terminal/types";
 import { TypingEffect } from "./typing-effect";
 import { WelcomeOutput } from "./renderers/welcome-output";
@@ -13,6 +14,8 @@ import { AchievementsOutput } from "./renderers/achievements-output";
 import { CertificationsOutput } from "./renderers/certifications-output";
 import { ContactOutput } from "./renderers/contact-output";
 import { ResumeOutput } from "./renderers/resume-output";
+import { HireOutput } from "./renderers/hire-output";
+import { EasterEggOutput } from "./renderers/easter-egg-output";
 
 /** Exhaustiveness check helper */
 function assertNever(x: never): never {
@@ -41,6 +44,8 @@ function renderOutput(output: CommandOutput) {
       return <CertificationsOutput />;
     case "contact":
       return <ContactOutput />;
+    case "hire":
+      return <HireOutput />;
     case "resume":
       return <ResumeOutput />;
 
@@ -48,6 +53,9 @@ function renderOutput(output: CommandOutput) {
       // Clear is intercepted by the reducer and never reaches history,
       // but we handle it for type completeness
       return null;
+
+    case "easter-egg":
+      return <EasterEggOutput egg={output.egg} />;
 
     case "error":
       return (
@@ -63,7 +71,7 @@ function renderOutput(output: CommandOutput) {
   }
 }
 
-export function TerminalOutputEntry({ entry }: { entry: TerminalEntry }) {
+export const TerminalOutputEntry = memo(function TerminalOutputEntry({ entry }: { entry: TerminalEntry }) {
   return (
     <div className="space-y-1">
       {entry.command !== undefined && (
@@ -76,4 +84,4 @@ export function TerminalOutputEntry({ entry }: { entry: TerminalEntry }) {
       {renderOutput(entry.output)}
     </div>
   );
-}
+});

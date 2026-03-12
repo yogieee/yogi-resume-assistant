@@ -33,11 +33,14 @@ export class ResponseCache<T> {
       this.store.delete(key);
       return undefined;
     }
+    // LRU: move to end so it's evicted last
+    this.store.delete(key);
+    this.store.set(key, entry);
     return entry.value;
   }
 
   set(key: string, value: T, ttl = DEFAULT_TTL): void {
-    // FIFO eviction: delete oldest entry if at capacity
+    // LRU eviction: delete least recently used entry if at capacity
     if (this.store.size >= this.maxSize && !this.store.has(key)) {
       const oldest = this.store.keys().next().value;
       if (oldest !== undefined) {

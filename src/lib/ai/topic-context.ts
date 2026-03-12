@@ -8,11 +8,13 @@ type TopicKey =
   | "projects"
   | "achievements"
   | "certifications"
-  | "contact";
+  | "contact"
+  | "education"
+  | "interests";
 
 const contextBuilders: Record<TopicKey, () => string> = {
   about: () =>
-    `${portfolio.about.name} -- ${portfolio.about.role}\n${portfolio.about.summary.trim()}`,
+    `${portfolio.about.name} -- ${portfolio.about.role}\nBased in ${portfolio.about.location}\n${portfolio.about.summary.trim()}`,
 
   skills: () =>
     portfolio.skills
@@ -43,18 +45,26 @@ const contextBuilders: Record<TopicKey, () => string> = {
 
   certifications: () =>
     portfolio.certifications
-      .map((c) => `- ${c.name} (${c.status})`)
+      .map((c) => `- ${c.name} (${c.status})${c.period ? ` ${c.period}` : ""}`)
       .join("\n"),
 
   contact: () =>
     portfolio.contact.map((c) => `- ${c.label}: ${c.url}`).join("\n"),
+
+  education: () =>
+    portfolio.education
+      .map((e) => `- ${e.degree} -- ${e.institution} (${e.year})`)
+      .join("\n"),
+
+  interests: () =>
+    `${portfolio.interests.learning}\nHobbies: ${portfolio.interests.hobbies.join(", ")}`,
 };
 
 /** Map intents to topic context keys. Some intents combine multiple topics. */
 function getTopicKeys(intent: Intent | null): TopicKey[] {
   switch (intent) {
     case "about":
-      return ["about"];
+      return ["about", "education"];
     case "skills":
       return ["skills"];
     case "experience":
@@ -70,10 +80,12 @@ function getTopicKeys(intent: Intent | null): TopicKey[] {
     case "contact":
       return ["contact"];
     case "hire":
-      return ["about", "skills", "achievements"];
+      return ["about", "skills", "achievements", "contact"];
+    case "help":
+      return ["about"];
     default:
-      // novel or null -- smallest useful fallback
-      return ["about", "skills"];
+      // novel or null -- include projects so AI can answer design/architecture questions
+      return ["about", "skills", "projects"];
   }
 }
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { forwardRef, useImperativeHandle, useRef, useState } from "react";
+import { forwardRef, useImperativeHandle, useRef, useState, useMemo } from "react";
 import { getCompletions } from "@/lib/terminal/commands";
 import { Autocomplete } from "./autocomplete";
 
@@ -41,6 +41,16 @@ export const TerminalInput = forwardRef<TerminalInputHandle, TerminalInputProps>
       inputRef.current?.focus();
     };
 
+    // Ghost text: show the rest of the top completion as dimmed hint
+    const ghostSuffix = useMemo(() => {
+      const trimmed = value.trim().toLowerCase();
+      if (!trimmed) return "";
+      const matches = getCompletions(trimmed);
+      if (matches.length === 0) return "";
+      // Show the remaining characters of the first match
+      return matches[0].slice(trimmed.length);
+    }, [value]);
+
     return (
       <div>
         <form
@@ -52,36 +62,44 @@ export const TerminalInput = forwardRef<TerminalInputHandle, TerminalInputProps>
         >
           <span className="text-glow-green font-bold select-none">yogi@portfolio</span>
           <span className="text-console-text-dim select-none">&nbsp;%&nbsp;</span>
-          <input
-            ref={inputRef}
-            type="text"
-            value={value}
-            onChange={(e) => handleChange(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Tab") {
-                e.preventDefault();
-                const matches = getCompletions(value);
-                if (matches.length === 1) {
-                  onChange(matches[0]);
-                  setSuggestions([]);
-                } else if (matches.length > 1) {
-                  setSuggestions(matches);
-                } else {
-                  setSuggestions([]);
+          <div className="relative flex-1">
+            <input
+              ref={inputRef}
+              type="text"
+              value={value}
+              onChange={(e) => handleChange(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Tab") {
+                  e.preventDefault();
+                  const matches = getCompletions(value);
+                  if (matches.length === 1) {
+                    onChange(matches[0]);
+                    setSuggestions([]);
+                  } else if (matches.length > 1) {
+                    setSuggestions(matches);
+                  } else {
+                    setSuggestions([]);
+                  }
+                } else if (e.key === "ArrowUp") {
+                  e.preventDefault();
+                  onHistoryUp();
+                } else if (e.key === "ArrowDown") {
+                  e.preventDefault();
+                  onHistoryDown();
                 }
-              } else if (e.key === "ArrowUp") {
-                e.preventDefault();
-                onHistoryUp();
-              } else if (e.key === "ArrowDown") {
-                e.preventDefault();
-                onHistoryDown();
-              }
-            }}
-            autoFocus
-            spellCheck={false}
-            autoComplete="off"
-            className="flex-1 bg-transparent border-none outline-none ring-0 text-console-text caret-glow-green focus:outline-none focus:ring-0"
-          />
+              }}
+              autoFocus
+              spellCheck={false}
+              autoComplete="off"
+              className="w-full bg-transparent border-none outline-none ring-0 text-console-text caret-glow-green focus:outline-none focus:ring-0"
+            />
+            {ghostSuffix && (
+              <span className="pointer-events-none absolute top-0 left-0 whitespace-pre text-console-text-dim/40">
+                <span className="invisible">{value}</span>
+                {ghostSuffix}
+              </span>
+            )}
+          </div>
         </form>
         <Autocomplete suggestions={suggestions} onSelect={handleSelectSuggestion} />
       </div>

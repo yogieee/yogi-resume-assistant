@@ -16,7 +16,7 @@ const iconMap: Record<
 
 export function SocialLinks({ contacts }: { contacts: ContactInfo[] }) {
   return (
-    <div className="flex items-center justify-center gap-3">
+    <div className="flex items-center justify-center gap-2">
       {contacts.map((c) => {
         const Icon = iconMap[c.type];
         const isExternal = c.type === "linkedin" || c.type === "github";
@@ -30,9 +30,9 @@ export function SocialLinks({ contacts }: { contacts: ContactInfo[] }) {
               rel: "noopener noreferrer",
             })}
             aria-label={c.label}
-            className="rounded-lg border border-transparent bg-console-elevated/50 p-2 text-console-text-dim transition-colors duration-200 hover:border-console-border hover:bg-console-elevated hover:text-glow-green"
+            className="rounded border border-transparent bg-console-elevated/50 p-1.5 text-console-text-dim transition-colors duration-200 hover:border-console-border hover:bg-console-elevated hover:text-glow-green"
           >
-            <Icon className="size-4" />
+            <Icon className="size-3.5" />
           </a>
         );
       })}

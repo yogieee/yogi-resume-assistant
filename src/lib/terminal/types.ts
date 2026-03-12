@@ -12,8 +12,10 @@ export type CommandOutput =
   | { type: "achievements" }
   | { type: "certifications" }
   | { type: "contact" }
+  | { type: "hire" }
   | { type: "resume" }
   | { type: "clear" }
+  | { type: "easter-egg"; egg: string }
   | { type: "error"; input: string };
 
 /** A single entry in the terminal history */

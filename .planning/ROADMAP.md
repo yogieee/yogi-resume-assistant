@@ -17,7 +17,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 3: Terminal Core** - Command parser, all 11 commands, formatted output, input handling, welcome message
 - [x] **Phase 4: Terminal Polish** - Typing animation, command history, autocomplete, Framer Motion transitions
 - [x] **Phase 5: AI Integration** - Claude API streaming, mode toggle, rate limiting, error handling, grounded system prompt
-- [ ] **Phase 6: Production Readiness** - SEO, Open Graph tags, easter eggs, single data source validation, error boundaries
+- [x] **Phase 6: Production Readiness** - SEO, Open Graph tags, easter eggs, hire command, error boundaries
 - [x] **Phase 7: AI Caching & Smart Routing** - Intent router, pre-generated responses for common questions, response cache, minimal AI context, AI only for novel queries
 
 ## Phase Details
@@ -112,12 +112,12 @@ Plans:
   1. The page has proper SEO meta tags (title, description, keywords) and Open Graph tags that produce a rich preview when shared on LinkedIn or Twitter
   2. Easter egg commands (sudo, matrix, etc.) produce fun, memorable responses
   3. Runtime errors in any component are caught by error boundaries and display a graceful fallback instead of a white screen
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 06-01: SEO meta tags and Open Graph social previews
-- [ ] 06-02: Easter egg commands and final polish
-- [ ] 06-03: Error boundaries and production hardening
+- [x] 06-01: SEO meta tags, Open Graph social previews, and dynamic OG image
+- [x] 06-02: Easter egg commands (sudo, matrix, whoami, 404, hack, coffee, ping) and hire command
+- [x] 06-03: Error boundaries (error.tsx, not-found.tsx, global-error.tsx)
 
 ### Phase 7: AI Caching & Smart Routing
 **Goal**: Minimize AI API calls and cost by routing predictable portfolio questions to pre-generated or cached responses, reserving Claude for truly novel queries -- with minimal context sent per AI call
@@ -148,5 +148,5 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7
 | 3. Terminal Core | 4/4 | ✓ Complete | 2026-03-12 |
 | 4. Terminal Polish | 3/3 | ✓ Complete | 2026-03-12 |
 | 5. AI Integration | 3/3 | ✓ Complete | 2026-03-12 |
-| 6. Production Readiness | 0/3 | Not started | - |
+| 6. Production Readiness | 3/3 | ✓ Complete | 2026-03-12 |
 | 7. AI Caching & Smart Routing | 3/3 | ✓ Complete | 2026-03-12 |
