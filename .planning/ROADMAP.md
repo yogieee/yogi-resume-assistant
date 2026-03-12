@@ -129,10 +129,12 @@ Plans:
   3. Novel questions are checked against a response cache (hash-based); cache hits return stored responses without an API call
   4. Cache misses call Claude with a minimal structured context snippet (not the full portfolio) and cache the result
   5. AI costs are dramatically reduced for typical visitor patterns (most questions are predictable)
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 07-01: TBD (run /gsd:plan-phase 7 to break down)
+- [ ] 07-01-PLAN.md — Intent router, static responses, and minimal topic context
+- [ ] 07-02-PLAN.md — Response cache with TTL and AI SDK caching middleware
+- [ ] 07-03-PLAN.md — Wire three-tier routing into route handler
 
 ## Progress
 
@@ -147,4 +149,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7
 | 4. Terminal Polish | 3/3 | ✓ Complete | 2026-03-12 |
 | 5. AI Integration | 3/3 | ✓ Complete | 2026-03-12 |
 | 6. Production Readiness | 0/3 | Not started | - |
-| 7. AI Caching & Smart Routing | 0/0 | Not started | - |
+| 7. AI Caching & Smart Routing | 0/3 | Not started | - |
