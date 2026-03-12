@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-03-11)
 
 **Core value:** Terminal interface lets visitors discover Yogi's full professional profile through intuitive commands
-**Current focus:** Phase 5 - AI Integration
+**Current focus:** Phase 5 - AI Integration (COMPLETE)
 
 ## Current Position
 
-Phase: 5 of 6 (AI Integration)
-Plan: 2 of 3 in current phase
-Status: In progress
-Last activity: 2026-03-12 -- Completed 05-02-PLAN.md (Claude API Integration)
+Phase: 5 of 6 (AI Integration) -- PHASE COMPLETE
+Plan: 3 of 3 in current phase
+Status: Phase complete
+Last activity: 2026-03-12 -- Completed 05-03-PLAN.md (Rate Limiting & Error Handling)
 
-Progress: [███████████████░░░░] 15/19 plans (~79%)
+Progress: [████████████████░░░] 16/19 plans (~84%)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 15
+- Total plans completed: 16
 - Average duration: 1.9 min
-- Total execution time: 0.43 hours
+- Total execution time: 0.48 hours
 
 **By Phase:**
 
@@ -31,10 +31,10 @@ Progress: [███████████████░░░░] 15/19 plan
 | 02 Profile Card | 3/3 | manual | manual |
 | 03 Terminal Core | 4/4 | 4 min | 1.0 min |
 | 04 Terminal Polish | 3/3 | 6 min | 2.0 min |
-| 05 AI Integration | 2/3 | 7 min | 3.5 min |
+| 05 AI Integration | 3/3 | 10 min | 3.3 min |
 
 **Recent Trend:**
-- Last 5 plans: 04-01 (2 min), 04-02 (2 min), 04-03 (2 min), 05-01 (3 min), 05-02 (4 min)
+- Last 5 plans: 04-02 (2 min), 04-03 (2 min), 05-01 (3 min), 05-02 (4 min), 05-03 (3 min)
 - Trend: stable/fast
 
 *Updated after each plan completion*
@@ -77,6 +77,9 @@ Recent decisions affecting current work:
 - 05-02: Model updated to claude-haiku-4-5-20251001 (from planned claude-haiku-3-5-20241022) after user testing
 - 05-02: temperature: 0 for minimal hallucination; maxOutputTokens: 1024 for concise responses
 - 05-02: convertToModelMessages is async in AI SDK v6 (awaited in route handler)
+- 05-03: Rate limit set to 15 req/min per IP (user adjusted from planned 10)
+- 05-03: In-memory rate limiter sufficient for portfolio site (no KV store needed)
+- 05-03: Input disabled during streaming to prevent double-sends
 
 ### Pending Todos
 
@@ -84,11 +87,10 @@ None yet.
 
 ### Blockers/Concerns
 
-- Phase 5: Decide rate limiting strategy (in-memory vs. KV store vs. Edge Middleware)
 - Phase 4: Tab completion UX on mobile needs design decision
 
 ## Session Continuity
 
 Last session: 2026-03-12
-Stopped at: Completed 05-02-PLAN.md (Claude API Integration)
+Stopped at: Completed 05-03-PLAN.md (Rate Limiting & Error Handling) -- Phase 5 complete
 Resume file: None
