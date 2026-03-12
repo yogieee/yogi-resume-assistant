@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Yogi Resume Assistant
+
+An AI-powered developer portfolio that presents Yoganand Govind's professional profile as an interactive developer console. Recruiters and engineers explore experience, skills, and projects through a terminal-style interface with an AI chat mode powered by Claude.
+
+## Features
+
+- **Interactive Terminal** — 13 commands (`help`, `about`, `skills`, `experience`, `projects`, `architecture`, `achievements`, `certifications`, `contact`, `hire`, `resume`, `clear`) with command history, tab autocomplete, typing animations, and hidden easter eggs
+- **AI Chat Mode** — Ask anything about Yogi's background using Claude Haiku 4.5 with streaming responses
+- **Three-Tier Response System** — Static responses, response caching, and live AI calls — 80%+ of questions answered with zero API cost
+- **3D Badge Card** — Interactive badge with physics simulation (React Three Fiber + Rapier)
+- **Dark Console Aesthetic** — Terminal-themed UI with OKLCH glow accents and monospace typography
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS v4, shadcn/ui |
+| 3D | React Three Fiber, Rapier Physics |
+| Animation | Motion |
+| AI | Vercel AI SDK v6, Claude Haiku 4.5 |
+| Deployment | Vercel |
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env.local
+# Add your ANTHROPIC_API_KEY to .env.local
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the portfolio.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Variable | Description |
+|----------|-------------|
+| `ANTHROPIC_API_KEY` | Anthropic API key for Claude AI chat mode |
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/                    # Next.js App Router pages & API routes
+│   ├── api/chat/           # AI chat endpoint with rate limiting
+│   ├── opengraph-image.tsx # Dynamic OG image generation
+│   ├── error.tsx           # Error boundary
+│   └── not-found.tsx       # 404 page
+├── components/
+│   ├── ai/                 # AI chat shell & welcome screen
+│   ├── terminal/           # Terminal shell, input, output, renderers
+│   └── badge-scene.tsx     # 3D badge card
+├── data/
+│   └── portfolio.ts        # Single source of truth for all portfolio data
+├── lib/
+│   ├── ai/                 # Intent router, static responses, caching, system prompt
+│   └── terminal/           # Command registry, parser, types
+└── types/
+    └── portfolio.ts        # TypeScript interfaces for portfolio data
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Architecture
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+User Input
+    │
+    ├─ Terminal Mode ──→ Command Parser ──→ Renderer
+    │
+    └─ AI Mode ──→ Intent Router ──→ Static Response? ──→ Return cached
+                                  ──→ Cache hit?       ──→ Return cached
+                                  ──→ Cache miss       ──→ Claude API (streaming)
+```
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Private project. All rights reserved.
