@@ -60,8 +60,8 @@ export const TerminalInput = forwardRef<TerminalInputHandle, TerminalInputProps>
           }}
           className="flex items-center"
         >
-          <span className="text-glow-green font-bold select-none">yogi@portfolio</span>
-          <span className="text-console-text-dim select-none">&nbsp;%&nbsp;</span>
+          <span className="text-glow-green font-bold select-none shrink-0"><span className="hidden sm:inline">yogi@portfolio</span><span className="sm:hidden">yogi</span></span>
+          <span className="text-console-text-dim select-none shrink-0">&nbsp;%&nbsp;</span>
           <div className="relative flex-1">
             <input
               ref={inputRef}

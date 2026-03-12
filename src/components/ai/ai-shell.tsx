@@ -59,19 +59,19 @@ export function AiShell({ active }: AiShellProps) {
   const isThinking = status === "submitted";
 
   return (
-    <div className="flex flex-col h-full bg-console-bg text-[13px] leading-relaxed">
+    <div className="flex flex-col h-full bg-console-bg text-xs sm:text-[13px] leading-relaxed">
       {/* Window chrome */}
-      <div className="shrink-0 px-4 py-2 border-b border-console-border bg-console-surface flex items-center gap-2">
-        <span className="size-3 rounded-full bg-[#ff5f57]" />
-        <span className="size-3 rounded-full bg-[#febc2e]" />
-        <span className="size-3 rounded-full bg-[#28c840]" />
-        <span className="ml-4 text-console-text-dim text-xs">
+      <div className="shrink-0 px-3 py-2 sm:px-4 border-b border-console-border bg-console-surface flex items-center gap-1.5 sm:gap-2">
+        <span className="size-2.5 sm:size-3 rounded-full bg-[#ff5f57]" />
+        <span className="size-2.5 sm:size-3 rounded-full bg-[#febc2e]" />
+        <span className="size-2.5 sm:size-3 rounded-full bg-[#28c840]" />
+        <span className="ml-2 sm:ml-4 text-console-text-dim text-xs truncate">
           yogi@portfolio &mdash; ai
         </span>
       </div>
 
       {/* Scrollable message area */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-1">
+      <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-1">
         {messages.length === 0 ? (
           <AiWelcome onStarterClick={handleStarterClick} />
         ) : (
@@ -97,7 +97,7 @@ export function AiShell({ active }: AiShellProps) {
       </div>
 
       {/* Input bar */}
-      <div className="shrink-0 border-t border-console-border bg-console-surface px-4 py-2">
+      <div className="shrink-0 border-t border-console-border bg-console-surface px-3 py-2 sm:px-4">
         <form
           onSubmit={(e) => {
             e.preventDefault();

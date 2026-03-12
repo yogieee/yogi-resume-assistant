@@ -217,15 +217,10 @@ function Band({ maxSpeed = 50, minSpeed = 10, canvasHovered = false }) {
               }}
             >
               <planeGeometry args={[0.7, 0.98]} />
-              <meshPhysicalMaterial
+              <meshBasicMaterial
                 map={badgeTexture}
                 depthWrite={false}
-                clearcoat={0.2}
-                clearcoatRoughness={0.5}
-                roughness={0.9}
-                metalness={0}
-                reflectivity={0.1}
-                envMapIntensity={0.15}
+                toneMapped={false}
               />
             </mesh>
             {/* Clip and clamp — render above badge overlay */}

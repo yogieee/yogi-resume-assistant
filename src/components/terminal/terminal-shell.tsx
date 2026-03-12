@@ -1,33 +1,30 @@
 "use client";
 
-import { useReducer, useRef, useEffect, useCallback } from "react";
+import { useReducer, useRef, useEffect, useCallback, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { terminalReducer, initialState } from "@/lib/terminal/reducer";
 import { TerminalInput } from "./terminal-input";
 import type { TerminalInputHandle } from "./terminal-input";
 import { TerminalOutputEntry } from "./terminal-output";
+import { ResumeDialog } from "@/components/resume-dialog";
 
 export function TerminalShell() {
   const [state, dispatch] = useReducer(terminalReducer, initialState);
   const containerRef = useRef<HTMLDivElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<TerminalInputHandle>(null);
+  const [resumeDialogOpen, setResumeDialogOpen] = useState(false);
 
   // Auto-scroll on new history entries
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [state.history.length]);
 
-  // Resume download side effect
+  // Resume download side effect — open dialog instead of direct download
   useEffect(() => {
     const latest = state.history[state.history.length - 1];
     if (latest?.output.type === "resume") {
-      const link = document.createElement("a");
-      link.href = "/Yoganandgovind-resume.pdf";
-      link.download = "Yoganand_Govind_Resume.pdf";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      setResumeDialogOpen(true);
     }
   }, [state.history]);
 
@@ -56,20 +53,20 @@ export function TerminalShell() {
     <div
       ref={containerRef}
       onClick={handleContainerClick}
-      className="flex flex-col h-full bg-console-bg text-[13px] leading-relaxed"
+      className="flex flex-col h-full bg-console-bg text-xs sm:text-[13px] leading-relaxed"
     >
       {/* Window chrome */}
-      <div className="shrink-0 px-4 py-2 border-b border-console-border bg-console-surface flex items-center gap-2">
-        <span className="size-3 rounded-full bg-[#ff5f57]" />
-        <span className="size-3 rounded-full bg-[#febc2e]" />
-        <span className="size-3 rounded-full bg-[#28c840]" />
-        <span className="ml-4 text-console-text-dim text-xs">
+      <div className="shrink-0 px-3 py-2 sm:px-4 border-b border-console-border bg-console-surface flex items-center gap-1.5 sm:gap-2">
+        <span className="size-2.5 sm:size-3 rounded-full bg-[#ff5f57]" />
+        <span className="size-2.5 sm:size-3 rounded-full bg-[#febc2e]" />
+        <span className="size-2.5 sm:size-3 rounded-full bg-[#28c840]" />
+        <span className="ml-2 sm:ml-4 text-console-text-dim text-xs truncate">
           yogi@portfolio — terminal
         </span>
       </div>
 
       {/* Scrollable terminal flow */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-3">
+      <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3">
         <AnimatePresence>
           {state.history.map((entry) => (
             <motion.div
@@ -95,6 +92,11 @@ export function TerminalShell() {
         />
         <div ref={bottomRef} />
       </div>
+
+      <ResumeDialog
+        open={resumeDialogOpen}
+        onClose={() => setResumeDialogOpen(false)}
+      />
     </div>
   );
 }

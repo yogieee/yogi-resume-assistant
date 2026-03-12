@@ -15,7 +15,7 @@ const geist = Geist({
   display: "swap",
 });
 
-const siteUrl = "https://yoganandgovind.dev";
+const siteUrl = "https://yoganandgovind.me";
 
 export const metadata: Metadata = {
   title: "Yoganand Govind | Senior Software Developer",
@@ -64,6 +64,15 @@ export const metadata: Metadata = {
       "12+ years building enterprise platforms. Creator of Autowired.ai. AWS certified. Explore my work through an interactive developer console.",
     images: ["/og-image.png"],
   },
+  icons: {
+    icon: [
+      { url: "/favicon/favicon.ico", sizes: "any" },
+      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: "/favicon/apple-touch-icon.png",
+  },
+  manifest: "/favicon/site.webmanifest",
   robots: {
     index: true,
     follow: true,
@@ -76,7 +85,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`dark ${jetbrainsMono.variable} ${geist.variable}`}>
+    <html
+      lang="en"
+      className={`dark ${jetbrainsMono.variable} ${geist.variable}`}
+    >
       <body>{children}</body>
     </html>
   );

@@ -5,16 +5,16 @@ interface AiWelcomeProps {
 }
 
 const starters = [
-  "What are Yogi's key skills?",
+  "What can Yoganand build for me?",
   "Tell me about Autowired.ai",
   "What cloud technologies does he use?",
-  "Why hire Yoganand?",
-  "Start a project discussion",
+  "Why should I hire Yoganand?",
+  "I have a project idea",
 ];
 
 export function AiWelcome({ onStarterClick }: AiWelcomeProps) {
   return (
-    <div className="flex flex-col gap-4 py-6 px-2">
+    <div className="flex flex-col gap-3 sm:gap-4 py-4 sm:py-6 px-1 sm:px-2">
       <div>
         <h2 className="text-glow-cyan font-bold text-sm">
           Yogi AI &mdash; Portfolio Assistant
@@ -24,12 +24,12 @@ export function AiWelcome({ onStarterClick }: AiWelcomeProps) {
         </p>
       </div>
 
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-1.5 sm:gap-2">
         {starters.map((text) => (
           <button
             key={text}
             onClick={() => onStarterClick(text)}
-            className="px-3 py-1.5 text-xs rounded-full border border-console-border text-console-text-dim hover:text-glow-green hover:border-glow-green/40 hover:shadow-glow-sm transition-all duration-200"
+            className="px-2 py-1 sm:px-3 sm:py-1.5 text-xs rounded-full border border-console-border text-console-text-dim hover:text-glow-green hover:border-glow-green/40 hover:shadow-glow-sm transition-all duration-200"
           >
             {text}
           </button>

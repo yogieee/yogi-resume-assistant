@@ -9,7 +9,7 @@ export function ArchitectureOutput() {
         {project.name} Architecture
       </div>
       <div className="overflow-x-auto">
-        <pre className="whitespace-pre font-mono text-glow-cyan leading-relaxed">
+        <pre className="whitespace-pre font-mono text-glow-cyan leading-relaxed text-[10px] sm:text-xs">
           {project.architecture.join("\n")}
         </pre>
       </div>
