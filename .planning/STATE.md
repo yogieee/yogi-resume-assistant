@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-03-11)
 
 **Core value:** Terminal interface lets visitors discover Yogi's full professional profile through intuitive commands
-**Current focus:** Phase 6 - Production Readiness
+**Current focus:** Phase 7 - AI Caching & Smart Routing
 
 ## Current Position
 
-Phase: 6 of 7 (Production Readiness)
-Plan: 0 of 3 in current phase
-Status: Not started
-Last activity: 2026-03-12 -- Completed Phase 5 (AI Integration)
+Phase: 7 of 7 (AI Caching & Smart Routing)
+Plan: 1 of 3 in current phase
+Status: In progress
+Last activity: 2026-03-12 -- Completed 07-01-PLAN.md
 
-Progress: [████████████████░░░] 16/19 plans (~84%)
+Progress: [█████████████████░░] 17/19 plans (~89%)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 16
+- Total plans completed: 17
 - Average duration: 1.9 min
-- Total execution time: 0.48 hours
+- Total execution time: 0.51 hours
 
 **By Phase:**
 
@@ -32,9 +32,10 @@ Progress: [████████████████░░░] 16/19 plan
 | 03 Terminal Core | 4/4 | 4 min | 1.0 min |
 | 04 Terminal Polish | 3/3 | 6 min | 2.0 min |
 | 05 AI Integration | 3/3 | 10 min | 3.3 min |
+| 07 AI Caching | 1/3 | 3 min | 3.0 min |
 
 **Recent Trend:**
-- Last 5 plans: 04-02 (2 min), 04-03 (2 min), 05-01 (3 min), 05-02 (4 min), 05-03 (3 min)
+- Last 5 plans: 04-03 (2 min), 05-01 (3 min), 05-02 (4 min), 05-03 (3 min), 07-01 (3 min)
 - Trend: stable/fast
 
 *Updated after each plan completion*
@@ -80,6 +81,9 @@ Recent decisions affecting current work:
 - 05-03: Rate limit set to 15 req/min per IP (user adjusted from planned 10)
 - 05-03: In-memory rate limiter sufficient for portfolio site (no KV store needed)
 - 05-03: Input disabled during streaming to prevent double-sends
+- 07-01: LanguageModelV3StreamPart uses delta (not textDelta), requires id field, structured finishReason/usage in SDK v6
+- 07-01: Intent rules ordered most-specific-first (certifications before about) to prevent false keyword matches
+- 07-01: textToStreamChunks emits text-start, text-delta[], text-end, finish sequence per SDK v6 stream protocol
 
 ### Roadmap Evolution
 
@@ -96,5 +100,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-12
-Stopped at: Completed Phase 5 (AI Integration) -- verified, all 3 plans executed
+Stopped at: Completed 07-01-PLAN.md (Intent Router & Static Responses)
 Resume file: None
