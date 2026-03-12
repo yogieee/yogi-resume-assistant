@@ -79,6 +79,10 @@
     background-size: 40px 40px;
   }
 
+  .caret-blink {
+    caret-color: var(--color-glow-green);
+  }
+
   .bg-topological {
     background: radial-gradient(circle at center, #111 0%, #000 100%);
     position: relative;
