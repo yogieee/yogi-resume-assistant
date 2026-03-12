@@ -29,10 +29,18 @@ export interface TerminalEntry {
 export interface TerminalState {
   history: TerminalEntry[];
   inputValue: string;
+  /** Previously submitted commands (oldest first) */
+  commandHistory: string[];
+  /** Current position in commandHistory (-1 = not browsing) */
+  historyIndex: number;
+  /** Preserves typed text when entering history browsing mode */
+  savedInput: string;
 }
 
 /** Actions dispatched to the terminal reducer */
 export type TerminalAction =
   | { type: "SUBMIT_COMMAND"; command: string }
   | { type: "SET_INPUT"; value: string }
-  | { type: "CLEAR" };
+  | { type: "CLEAR" }
+  | { type: "HISTORY_UP" }
+  | { type: "HISTORY_DOWN" };

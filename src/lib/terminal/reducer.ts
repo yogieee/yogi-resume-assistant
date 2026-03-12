@@ -13,8 +13,11 @@ function createEntry(output: CommandOutput, command?: string): TerminalEntry {
 
 /** Initial terminal state with a welcome message */
 export const initialState: TerminalState = {
-  history: [createEntry({ type: "welcome" })],
+  history: [createEntry({ type: "welcome" }, "welcome")],
   inputValue: "",
+  commandHistory: [],
+  historyIndex: -1,
+  savedInput: "",
 };
 
 /**
@@ -43,11 +46,21 @@ export function terminalReducer(
 
       const output = parseCommand(trimmed);
 
+      // Consecutive dedup: only store if different from last entry
+      const lastCmd = state.commandHistory[state.commandHistory.length - 1];
+      const newCommandHistory =
+        lastCmd === trimmed
+          ? state.commandHistory
+          : [...state.commandHistory, trimmed];
+
       // Clear command: reset history to welcome-only
       if (output.type === "clear") {
         return {
           history: [createEntry({ type: "welcome" })],
           inputValue: "",
+          commandHistory: newCommandHistory,
+          historyIndex: -1,
+          savedInput: "",
         };
       }
 
@@ -55,6 +68,9 @@ export function terminalReducer(
       return {
         history: [...state.history, createEntry(output, trimmed)],
         inputValue: "",
+        commandHistory: newCommandHistory,
+        historyIndex: -1,
+        savedInput: "",
       };
     }
 
@@ -62,13 +78,61 @@ export function terminalReducer(
       return {
         ...state,
         inputValue: action.value,
+        historyIndex: -1,
       };
 
     case "CLEAR":
       return {
         history: [createEntry({ type: "welcome" })],
         inputValue: "",
+        commandHistory: state.commandHistory,
+        historyIndex: -1,
+        savedInput: "",
       };
+
+    case "HISTORY_UP": {
+      if (state.commandHistory.length === 0) return state;
+
+      // First press: save current input and jump to most recent command
+      if (state.historyIndex === -1) {
+        const newIndex = state.commandHistory.length - 1;
+        return {
+          ...state,
+          savedInput: state.inputValue,
+          historyIndex: newIndex,
+          inputValue: state.commandHistory[newIndex],
+        };
+      }
+
+      // Already browsing: go further back (min 0)
+      const newIndex = Math.max(0, state.historyIndex - 1);
+      return {
+        ...state,
+        historyIndex: newIndex,
+        inputValue: state.commandHistory[newIndex],
+      };
+    }
+
+    case "HISTORY_DOWN": {
+      if (state.historyIndex === -1) return state;
+
+      const newIndex = state.historyIndex + 1;
+
+      // Past the end: restore saved input
+      if (newIndex >= state.commandHistory.length) {
+        return {
+          ...state,
+          historyIndex: -1,
+          inputValue: state.savedInput,
+        };
+      }
+
+      return {
+        ...state,
+        historyIndex: newIndex,
+        inputValue: state.commandHistory[newIndex],
+      };
+    }
 
     default:
       return state;
