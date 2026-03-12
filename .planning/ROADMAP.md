@@ -62,13 +62,13 @@ Plans:
   3. The terminal auto-scrolls to show new output; the `clear` command resets the terminal; the `resume` command triggers a PDF download
   4. Typing an unrecognized command shows a helpful error message suggesting valid commands
   5. All command output data comes from the shared portfolio data file (not hardcoded in components)
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 03-01: Terminal shell component (header, input, output area, state reducer)
-- [ ] 03-02: Command parser and registry with discriminated union output types
-- [ ] 03-03: Command output renderers (formatted display for all 11 commands)
-- [ ] 03-04: Welcome message and error handling
+- [ ] 03-01-PLAN.md — Terminal types, command registry, and state reducer (logic layer)
+- [ ] 03-02-PLAN.md — Terminal shell, input, and output dispatcher (UI shell)
+- [ ] 03-03-PLAN.md — All 11 command output renderers (formatted display)
+- [ ] 03-04-PLAN.md — Wire renderers into dispatcher and integrate terminal into page
 
 ### Phase 4: Terminal Polish
 **Goal**: The terminal feels alive and professional -- typing animations, keyboard navigation, autocomplete, and smooth transitions elevate it beyond a basic command prompt
