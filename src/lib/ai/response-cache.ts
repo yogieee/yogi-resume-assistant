@@ -5,7 +5,8 @@ import type { LanguageModelV3StreamPart } from "@ai-sdk/provider";
 
 export interface CachedStreamData {
   chunks: LanguageModelV3StreamPart[];
-  rawCall: { rawPrompt: unknown; rawSettings: Record<string, unknown> };
+  request?: { body?: unknown };
+  response?: { headers?: Record<string, string> };
 }
 
 interface CacheEntry<T> {
