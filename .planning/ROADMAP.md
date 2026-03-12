@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Foundation & Data Layer** - Project scaffold, types, portfolio data, global styles, theme
 - [x] **Phase 2: Profile Card & Layout** - Two-panel responsive layout, interactive 3D badge card, social links, resume download
 - [x] **Phase 3: Terminal Core** - Command parser, all 11 commands, formatted output, input handling, welcome message
-- [ ] **Phase 4: Terminal Polish** - Typing animation, command history, autocomplete, Framer Motion transitions
+- [x] **Phase 4: Terminal Polish** - Typing animation, command history, autocomplete, Framer Motion transitions
 - [ ] **Phase 5: AI Integration** - Claude API streaming, mode toggle, rate limiting, error handling, grounded system prompt
 - [ ] **Phase 6: Production Readiness** - SEO, Open Graph tags, easter eggs, single data source validation, error boundaries
 
@@ -82,9 +82,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 04-01-PLAN.md — Command history navigation with arrow up/down keys
-- [ ] 04-02-PLAN.md — Tab autocomplete and suggestion chips UI
-- [ ] 04-03-PLAN.md — Typing animation, fade+slide entry transitions, AnimatePresence
+- [x] 04-01-PLAN.md — Command history navigation with arrow up/down keys
+- [x] 04-02-PLAN.md — Tab autocomplete and suggestion chips UI
+- [x] 04-03-PLAN.md — Typing animation, fade+slide entry transitions, AnimatePresence
 
 ### Phase 5: AI Integration
 **Goal**: Visitors can toggle to AI mode and ask natural language questions about Yogi's experience, receiving streaming responses grounded in portfolio data
@@ -128,6 +128,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 | 1. Foundation & Data Layer | 3/3 | ✓ Complete | 2026-03-11 |
 | 2. Profile Card & Layout | 3/3 | ✓ Complete | 2026-03-12 |
 | 3. Terminal Core | 4/4 | ✓ Complete | 2026-03-12 |
-| 4. Terminal Polish | 0/3 | Not started | - |
+| 4. Terminal Polish | 3/3 | ✓ Complete | 2026-03-12 |
 | 5. AI Integration | 0/3 | Not started | - |
 | 6. Production Readiness | 0/3 | Not started | - |

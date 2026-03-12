@@ -26,8 +26,8 @@
 - [x] **TERM-02**: Command input with `>` prompt and blinking cursor
 - [x] **TERM-03**: Command parser supporting all 11 commands: help, about, skills, experience, projects, architecture, achievements, certifications, contact, resume, clear
 - [x] **TERM-04**: Scrollable output window with auto-scroll on new content
-- [ ] **TERM-05**: Command history navigation with arrow up/down keys
-- [ ] **TERM-06**: Command autocomplete/suggestions (tab completion or suggestion chips)
+- [x] **TERM-05**: Command history navigation with arrow up/down keys
+- [x] **TERM-06**: Command autocomplete/suggestions (tab completion or suggestion chips)
 - [x] **TERM-07**: Welcome message with onboarding guidance for first-time visitors
 
 ### Terminal Output
@@ -47,10 +47,10 @@
 
 ### Animations
 
-- [ ] **ANIM-01**: Typing animation for terminal responses (skippable on click)
+- [x] **ANIM-01**: Typing animation for terminal responses (skippable on click)
 - [x] **ANIM-02**: Badge card floating effect using physics-based sway
-- [ ] **ANIM-03**: Terminal message entry animations (fade/slide in)
-- [ ] **ANIM-04**: Smooth transitions between states
+- [x] **ANIM-03**: Terminal message entry animations (fade/slide in)
+- [x] **ANIM-04**: Smooth transitions between states
 
 ### AI Mode
 
@@ -129,8 +129,8 @@
 | TERM-02 | Phase 3 | Complete |
 | TERM-03 | Phase 3 | Complete |
 | TERM-04 | Phase 3 | Complete |
-| TERM-05 | Phase 4 | Pending |
-| TERM-06 | Phase 4 | Pending |
+| TERM-05 | Phase 4 | Complete |
+| TERM-06 | Phase 4 | Complete |
 | TERM-07 | Phase 3 | Complete |
 | OUT-01 | Phase 3 | Complete |
 | OUT-02 | Phase 3 | Complete |
@@ -144,10 +144,10 @@
 | OUT-10 | Phase 3 | Complete |
 | OUT-11 | Phase 3 | Complete |
 | OUT-12 | Phase 3 | Complete |
-| ANIM-01 | Phase 4 | Pending |
+| ANIM-01 | Phase 4 | Complete |
 | ANIM-02 | Phase 2 | Complete |
-| ANIM-03 | Phase 4 | Pending |
-| ANIM-04 | Phase 4 | Pending |
+| ANIM-03 | Phase 4 | Complete |
+| ANIM-04 | Phase 4 | Complete |
 | AI-01 | Phase 5 | Pending |
 | AI-02 | Phase 5 | Pending |
 | AI-03 | Phase 5 | Pending |
@@ -169,4 +169,4 @@
 
 ---
 *Requirements defined: 2026-03-11*
-*Last updated: 2026-03-12 after Phase 3 completion*
+*Last updated: 2026-03-12 after Phase 4 completion*
