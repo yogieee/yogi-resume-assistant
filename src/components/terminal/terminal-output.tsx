@@ -1,6 +1,7 @@
 "use client";
 
 import type { TerminalEntry, CommandOutput } from "@/lib/terminal/types";
+import { TypingEffect } from "./typing-effect";
 import { WelcomeOutput } from "./renderers/welcome-output";
 import { HelpOutput } from "./renderers/help-output";
 import { AboutOutput } from "./renderers/about-output";
@@ -51,8 +52,9 @@ function renderOutput(output: CommandOutput) {
     case "error":
       return (
         <div className="text-glow-red">
-          Unknown command: &apos;{output.input}&apos;. Type &apos;help&apos; for
-          available commands.
+          <TypingEffect speed={60}>
+            {`Unknown command: '${output.input}'. Type 'help' for available commands.`}
+          </TypingEffect>
         </div>
       );
 
@@ -65,8 +67,10 @@ export function TerminalOutputEntry({ entry }: { entry: TerminalEntry }) {
   return (
     <div className="space-y-1">
       {entry.command !== undefined && (
-        <div className="text-console-text-dim">
-          <span className="text-glow-green">{">"}</span> {entry.command}
+        <div className="text-console-text">
+          <span className="text-glow-green font-bold">yogi@portfolio</span>
+          <span className="text-console-text-dim"> % </span>
+          <span className="text-glow-cyan">{entry.command}</span>
         </div>
       )}
       {renderOutput(entry.output)}

@@ -1,24 +1,34 @@
+"use client";
+
+import { useState } from "react";
 import { portfolio } from "@/data/portfolio";
+import { TypingEffect } from "../typing-effect";
 
 export function WelcomeOutput() {
+  const [introDone, setIntroDone] = useState(false);
+  const [welcomeDone, setWelcomeDone] = useState(false);
+
   return (
-    <div className="space-y-2 mt-2">
-      <div className="border-l-2 border-glow-green pl-3 space-y-1">
-        <div className="text-glow-green font-bold">
-          Welcome to Yogi Dev Console v1.0
-        </div>
-        <div className="text-console-text">
-          Interactive terminal portfolio of {portfolio.about.name}
-        </div>
+    <div className="space-y-1">
+      <div className="text-console-text">
+        <TypingEffect speed={40} onComplete={() => setIntroDone(true)}>
+          {`Hi, I'm ${portfolio.about.name}, a ${portfolio.about.role}.`}
+        </TypingEffect>
+      </div>
+      {introDone && (
         <div className="text-console-text-dim">
-          {portfolio.about.tagline}
+          <TypingEffect speed={40} onComplete={() => setWelcomeDone(true)}>
+            {"Welcome to my interactive 'AI powered' portfolio terminal!"}
+          </TypingEffect>
         </div>
-        <div className="text-console-text mt-2">
+      )}
+      {welcomeDone && (
+        <div className="text-console-text">
           Type{" "}
           <span className="text-glow-cyan">&apos;help&apos;</span> to see
-          available commands
+          available commands.
         </div>
-      </div>
+      )}
     </div>
   );
 }
