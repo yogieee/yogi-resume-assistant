@@ -4,6 +4,7 @@ export interface AboutData {
   tagline: string;
   location: string;
   summary: string;
+  avatar?: string;
 }
 
 export interface Skill {

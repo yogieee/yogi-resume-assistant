@@ -2,8 +2,9 @@ import type { PortfolioData } from "@/types/portfolio";
 
 export const portfolio = {
   about: {
-    name: "Yogananda Govind",
+    name: "Yoganand Govind",
     role: "Senior Software Engineer | AI & Cloud Engineer",
+    avatar: "",
     tagline: "Building AI powered cloud platforms and automation systems",
     location: "United Kingdom",
     summary:

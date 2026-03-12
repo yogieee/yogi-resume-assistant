@@ -30,7 +30,7 @@ export function SocialLinks({ contacts }: { contacts: ContactInfo[] }) {
               rel: "noopener noreferrer",
             })}
             aria-label={c.label}
-            className="rounded-lg border border-transparent bg-console-elevated/50 p-2 text-console-text-dim transition-colors duration-200 hover:border-console-border hover:bg-console-elevated hover:text-glow-cyan"
+            className="rounded-lg border border-transparent bg-console-elevated/50 p-2 text-console-text-dim transition-colors duration-200 hover:border-console-border hover:bg-console-elevated hover:text-glow-green"
           >
             <Icon className="size-4" />
           </a>
