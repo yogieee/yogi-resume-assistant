@@ -1,6 +1,7 @@
 "use client";
 
 import { useReducer, useRef, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import { terminalReducer, initialState } from "@/lib/terminal/reducer";
 import { TerminalInput } from "./terminal-input";
 import type { TerminalInputHandle } from "./terminal-input";
@@ -9,12 +10,12 @@ import { TerminalOutputEntry } from "./terminal-output";
 export function TerminalShell() {
   const [state, dispatch] = useReducer(terminalReducer, initialState);
   const containerRef = useRef<HTMLDivElement>(null);
-  const outputEndRef = useRef<HTMLDivElement>(null);
+  const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<TerminalInputHandle>(null);
 
   // Auto-scroll on new history entries
   useEffect(() => {
-    outputEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [state.history.length]);
 
   // Resume download side effect
@@ -43,35 +44,56 @@ export function TerminalShell() {
     dispatch({ type: "SUBMIT_COMMAND", command });
   }, []);
 
+  const handleHistoryUp = useCallback(() => {
+    dispatch({ type: "HISTORY_UP" });
+  }, []);
+
+  const handleHistoryDown = useCallback(() => {
+    dispatch({ type: "HISTORY_DOWN" });
+  }, []);
+
   return (
     <div
       ref={containerRef}
       onClick={handleContainerClick}
-      className="flex flex-col h-full bg-console-bg"
+      className="flex flex-col h-full bg-console-bg text-[13px] leading-relaxed"
     >
-      {/* Header */}
+      {/* Window chrome */}
       <div className="shrink-0 px-4 py-2 border-b border-console-border bg-console-surface flex items-center gap-2">
-        <span className="size-2 rounded-full bg-glow-green" />
-        <span className="text-glow-green text-sm font-bold tracking-wide">
-          Yogi Dev Console v1.0
+        <span className="size-3 rounded-full bg-[#ff5f57]" />
+        <span className="size-3 rounded-full bg-[#febc2e]" />
+        <span className="size-3 rounded-full bg-[#28c840]" />
+        <span className="ml-4 text-console-text-dim text-xs">
+          yogi@portfolio — terminal
         </span>
       </div>
 
-      {/* Scrollable output */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
-        {state.history.map((entry) => (
-          <TerminalOutputEntry key={entry.id} entry={entry} />
-        ))}
-        <div ref={outputEndRef} />
-      </div>
+      {/* Scrollable terminal flow */}
+      <div className="flex-1 overflow-y-auto p-4 space-y-3">
+        <AnimatePresence mode="popLayout">
+          {state.history.map((entry) => (
+            <motion.div
+              key={entry.id}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
+            >
+              <TerminalOutputEntry entry={entry} />
+            </motion.div>
+          ))}
+        </AnimatePresence>
 
-      {/* Input */}
-      <TerminalInput
-        ref={inputRef}
-        value={state.inputValue}
-        onChange={handleInputChange}
-        onSubmit={handleSubmit}
-      />
+        {/* Active prompt */}
+        <TerminalInput
+          ref={inputRef}
+          value={state.inputValue}
+          onChange={handleInputChange}
+          onSubmit={handleSubmit}
+          onHistoryUp={handleHistoryUp}
+          onHistoryDown={handleHistoryDown}
+        />
+        <div ref={bottomRef} />
+      </div>
     </div>
   );
 }
