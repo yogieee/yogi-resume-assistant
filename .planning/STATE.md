@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-03-11)
 ## Current Position
 
 Phase: 5 of 6 (AI Integration)
-Plan: 0 of 3 in current phase
-Status: Not started
-Last activity: 2026-03-12 -- Completed Phase 4 (Terminal Polish)
+Plan: 1 of 3 in current phase
+Status: In progress
+Last activity: 2026-03-12 -- Completed 05-01-PLAN.md (AI Mode UI Shell)
 
-Progress: [█████████████░░░░░░] 13/19 plans (~68%)
+Progress: [██████████████░░░░░] 14/19 plans (~74%)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 13
+- Total plans completed: 14
 - Average duration: 1.8 min
-- Total execution time: 0.32 hours
+- Total execution time: 0.37 hours
 
 **By Phase:**
 
@@ -31,9 +31,10 @@ Progress: [█████████████░░░░░░] 13/19 plan
 | 02 Profile Card | 3/3 | manual | manual |
 | 03 Terminal Core | 4/4 | 4 min | 1.0 min |
 | 04 Terminal Polish | 3/3 | 6 min | 2.0 min |
+| 05 AI Integration | 1/3 | 3 min | 3.0 min |
 
 **Recent Trend:**
-- Last 5 plans: 03-03 (1 min), 03-04 (1 min), 04-01 (2 min), 04-02 (2 min), 04-03 (2 min)
+- Last 5 plans: 03-04 (1 min), 04-01 (2 min), 04-02 (2 min), 04-03 (2 min), 05-01 (3 min)
 - Trend: stable/fast
 
 *Updated after each plan completion*
@@ -68,6 +69,11 @@ Recent decisions affecting current work:
 - 04-02: Suggestions clear on every keystroke; only set on Tab with multiple matches (avoids stale state)
 - 04-02: Exact matches excluded from getCompletions (typing "help" + Tab shows nothing)
 - 04-03: No exit animations on AnimatePresence -- clear resets instantly
+- 05-01: AI SDK v6 sendMessage with parts array (not deprecated handleSubmit/content string)
+- 05-01: Manual input state in AiShell (v6 useChat does not provide input/handleInputChange)
+- 05-01: Page converted to client component for useState mode management
+- 05-01: Cyan accent (glow-cyan) for AI mode elements to distinguish from terminal's glow-green
+- 05-01: dangerouslySetInnerHTML for lightweight bold/code formatting (no markdown library)
 
 ### Pending Todos
 
@@ -82,5 +88,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-12
-Stopped at: Completed Phase 4 (Terminal Polish) -- verified, all 3 plans executed
+Stopped at: Completed 05-01-PLAN.md (AI Mode UI Shell)
 Resume file: None
