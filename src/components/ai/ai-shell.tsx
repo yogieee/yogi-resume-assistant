@@ -10,6 +10,14 @@ interface AiShellProps {
   active: boolean;
 }
 
+function getErrorMessage(error: Error): string {
+  const msg = error.message ?? "";
+  if (msg.includes("429") || msg.toLowerCase().includes("too many")) {
+    return "I\u2019m getting a lot of questions right now. Try again in a moment.";
+  }
+  return "Something went wrong on my end. Please try again.";
+}
+
 export function AiShell({ active }: AiShellProps) {
   const { messages, sendMessage, status, error, stop } = useChat({
     onError: (err) => {
@@ -19,6 +27,8 @@ export function AiShell({ active }: AiShellProps) {
 
   const [input, setInput] = useState("");
   const bottomRef = useRef<HTMLDivElement>(null);
+
+  const isBusy = status === "submitted" || status === "streaming";
 
   // Stop streaming when switching away from AI mode
   useEffect(() => {
@@ -34,7 +44,7 @@ export function AiShell({ active }: AiShellProps) {
 
   const handleSend = (text: string) => {
     const trimmed = text.trim();
-    if (!trimmed) return;
+    if (!trimmed || isBusy) return;
     sendMessage({
       role: "user",
       parts: [{ type: "text", text: trimmed }],
@@ -78,7 +88,7 @@ export function AiShell({ active }: AiShellProps) {
               yogi-ai &gt;&nbsp;
             </span>
             <span className="text-console-text-dim text-xs">
-              I&apos;m getting a lot of questions right now. Try again in a moment.
+              {getErrorMessage(error)}
             </span>
           </div>
         )}
@@ -96,15 +106,22 @@ export function AiShell({ active }: AiShellProps) {
           className="flex items-center"
         >
           <span className="text-glow-cyan font-bold select-none">ask</span>
-          <span className="text-console-text-dim select-none">&nbsp;&gt;&nbsp;</span>
+          <span className="text-console-text-dim select-none">
+            &nbsp;&gt;&nbsp;
+          </span>
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Ask about Yogi's experience, projects, skills..."
+            disabled={isBusy}
+            placeholder={
+              isBusy
+                ? "Thinking..."
+                : "Ask about Yogi's experience, projects, skills..."
+            }
             spellCheck={false}
             autoComplete="off"
-            className="flex-1 bg-transparent border-none outline-none ring-0 text-console-text caret-glow-cyan placeholder:text-console-text-dim/40 focus:outline-none focus:ring-0"
+            className="flex-1 bg-transparent border-none outline-none ring-0 text-console-text caret-glow-cyan placeholder:text-console-text-dim/40 focus:outline-none focus:ring-0 disabled:opacity-50"
           />
         </form>
       </div>
