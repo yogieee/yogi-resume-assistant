@@ -79,12 +79,12 @@ Plans:
   2. Tab completion or suggestion chips help visitors discover available commands without memorizing them
   3. Terminal responses appear with a typing animation that can be skipped by clicking; subsequent output renders instantly
   4. Terminal messages animate in (fade/slide) and state transitions are smooth via Framer Motion
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 04-01: Command history navigation (arrow keys)
-- [ ] 04-02: Command autocomplete and suggestion UI
-- [ ] 04-03: Typing animation with skip behavior and Framer Motion transitions
+- [ ] 04-01-PLAN.md — Command history navigation with arrow up/down keys
+- [ ] 04-02-PLAN.md — Tab autocomplete and suggestion chips UI
+- [ ] 04-03-PLAN.md — Typing animation, fade+slide entry transitions, AnimatePresence
 
 ### Phase 5: AI Integration
 **Goal**: Visitors can toggle to AI mode and ask natural language questions about Yogi's experience, receiving streaming responses grounded in portfolio data
