@@ -1,5 +1,6 @@
 import { BadgeLoader } from "@/components/badge-loader";
 import { ProfileActions } from "@/components/profile-actions";
+import { TerminalShell } from "@/components/terminal/terminal-shell";
 import { portfolio } from "@/data/portfolio";
 
 const { about } = portfolio;
@@ -25,20 +26,9 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Right: Terminal area */}
-        <div className="flex flex-col min-h-[300px] bg-black">
-          <div className="flex-1 flex flex-col items-center justify-center border-l border-console-border/50 bg-grid-mesh">
-            <div className="space-y-2 text-center animate-in fade-in zoom-in duration-700">
-              <p className="text-glow-green text-sm font-mono tracking-tighter">
-                &gt; SYSTEM_READY: PHASE_3_DEPLOYED
-              </p>
-              <div className="flex gap-2 justify-center">
-                <span className="size-1.5 rounded-full bg-glow-green animate-pulse" />
-                <span className="size-1.5 rounded-full bg-glow-green/40 animate-pulse delay-75" />
-                <span className="size-1.5 rounded-full bg-glow-green/10 animate-pulse delay-150" />
-              </div>
-            </div>
-          </div>
+        {/* Right: Terminal */}
+        <div className="flex flex-col min-h-[300px]">
+          <TerminalShell />
         </div>
       </div>
 
