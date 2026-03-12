@@ -34,3 +34,17 @@ export function parseCommand(input: string): CommandOutput {
 
   return { type: "error", input: trimmed };
 }
+
+/**
+ * Return command names that start with the given input (case-insensitive).
+ * Excludes exact matches so typing a full command shows no suggestions.
+ * Returns results sorted alphabetically.
+ */
+export function getCompletions(input: string): CommandName[] {
+  const trimmed = input.trim().toLowerCase();
+  if (!trimmed) return [];
+
+  return (Object.keys(COMMANDS) as CommandName[])
+    .filter((cmd) => cmd.startsWith(trimmed) && cmd !== trimmed)
+    .sort();
+}
