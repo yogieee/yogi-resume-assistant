@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-03-11)
 ## Current Position
 
 Phase: 5 of 6 (AI Integration)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-03-12 -- Completed 05-01-PLAN.md (AI Mode UI Shell)
+Last activity: 2026-03-12 -- Completed 05-02-PLAN.md (Claude API Integration)
 
-Progress: [██████████████░░░░░] 14/19 plans (~74%)
+Progress: [███████████████░░░░] 15/19 plans (~79%)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 14
-- Average duration: 1.8 min
-- Total execution time: 0.37 hours
+- Total plans completed: 15
+- Average duration: 1.9 min
+- Total execution time: 0.43 hours
 
 **By Phase:**
 
@@ -31,10 +31,10 @@ Progress: [██████████████░░░░░] 14/19 plan
 | 02 Profile Card | 3/3 | manual | manual |
 | 03 Terminal Core | 4/4 | 4 min | 1.0 min |
 | 04 Terminal Polish | 3/3 | 6 min | 2.0 min |
-| 05 AI Integration | 1/3 | 3 min | 3.0 min |
+| 05 AI Integration | 2/3 | 7 min | 3.5 min |
 
 **Recent Trend:**
-- Last 5 plans: 03-04 (1 min), 04-01 (2 min), 04-02 (2 min), 04-03 (2 min), 05-01 (3 min)
+- Last 5 plans: 04-01 (2 min), 04-02 (2 min), 04-03 (2 min), 05-01 (3 min), 05-02 (4 min)
 - Trend: stable/fast
 
 *Updated after each plan completion*
@@ -74,6 +74,9 @@ Recent decisions affecting current work:
 - 05-01: Page converted to client component for useState mode management
 - 05-01: Cyan accent (glow-cyan) for AI mode elements to distinguish from terminal's glow-green
 - 05-01: dangerouslySetInnerHTML for lightweight bold/code formatting (no markdown library)
+- 05-02: Model updated to claude-haiku-4-5-20251001 (from planned claude-haiku-3-5-20241022) after user testing
+- 05-02: temperature: 0 for minimal hallucination; maxOutputTokens: 1024 for concise responses
+- 05-02: convertToModelMessages is async in AI SDK v6 (awaited in route handler)
 
 ### Pending Todos
 
@@ -81,12 +84,11 @@ None yet.
 
 ### Blockers/Concerns
 
-- Phase 5: Verify Vercel AI SDK v6 `streamText` API shape before implementation
 - Phase 5: Decide rate limiting strategy (in-memory vs. KV store vs. Edge Middleware)
 - Phase 4: Tab completion UX on mobile needs design decision
 
 ## Session Continuity
 
 Last session: 2026-03-12
-Stopped at: Completed 05-01-PLAN.md (AI Mode UI Shell)
+Stopped at: Completed 05-02-PLAN.md (Claude API Integration)
 Resume file: None
