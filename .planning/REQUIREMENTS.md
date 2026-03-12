@@ -7,18 +7,18 @@
 
 ### Layout & Design
 
-- [ ] **LAYOUT-01**: Two-panel layout — profile card (left) + terminal (right) on desktop
-- [ ] **LAYOUT-02**: Responsive stacking — profile card moves to top, terminal full-width on mobile
+- [x] **LAYOUT-01**: Two-panel layout — profile card (left) + terminal (right) on desktop
+- [x] **LAYOUT-02**: Responsive stacking — profile card moves to top, terminal full-width on mobile
 - [ ] **LAYOUT-03**: Dark theme with glowing accents, monospace fonts, engineering console aesthetic
-- [ ] **LAYOUT-04**: Glassmorphism profile card with rounded corners, soft shadow, floating animation
+- [x] **LAYOUT-04**: Interactive 3D badge card with rounded corners, physics-based floating animation
 
 ### Profile Card
 
-- [ ] **PROF-01**: Display profile picture (placeholder avatar for v1)
-- [ ] **PROF-02**: Display name (Yogananda Govind), role, and professional tagline
-- [ ] **PROF-03**: Display location (United Kingdom)
-- [ ] **PROF-04**: Download Resume button linking to PDF in public folder
-- [ ] **PROF-05**: Social icons with links (LinkedIn, Email, Phone, GitHub)
+- [x] **PROF-01**: Display profile picture (badge image on 3D card)
+- [x] **PROF-02**: Display name (Yogananda Govind), role, and professional tagline
+- [x] **PROF-03**: Display location (United Kingdom)
+- [x] **PROF-04**: Download Resume button linking to PDF in public folder
+- [x] **PROF-05**: Social icons with links (LinkedIn, Email, Phone, GitHub)
 
 ### Terminal Core
 
@@ -48,7 +48,7 @@
 ### Animations
 
 - [ ] **ANIM-01**: Typing animation for terminal responses (skippable on click)
-- [ ] **ANIM-02**: Profile card floating effect using Framer Motion
+- [x] **ANIM-02**: Badge card floating effect using physics-based sway
 - [ ] **ANIM-03**: Terminal message entry animations (fade/slide in)
 - [ ] **ANIM-04**: Smooth transitions between states
 
@@ -116,15 +116,15 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| LAYOUT-01 | Phase 2 | Pending |
-| LAYOUT-02 | Phase 2 | Pending |
+| LAYOUT-01 | Phase 2 | Complete |
+| LAYOUT-02 | Phase 2 | Complete |
 | LAYOUT-03 | Phase 1 | Complete |
-| LAYOUT-04 | Phase 2 | Pending |
-| PROF-01 | Phase 2 | Pending |
-| PROF-02 | Phase 2 | Pending |
-| PROF-03 | Phase 2 | Pending |
-| PROF-04 | Phase 2 | Pending |
-| PROF-05 | Phase 2 | Pending |
+| LAYOUT-04 | Phase 2 | Complete |
+| PROF-01 | Phase 2 | Complete |
+| PROF-02 | Phase 2 | Complete |
+| PROF-03 | Phase 2 | Complete |
+| PROF-04 | Phase 2 | Complete |
+| PROF-05 | Phase 2 | Complete |
 | TERM-01 | Phase 3 | Pending |
 | TERM-02 | Phase 3 | Pending |
 | TERM-03 | Phase 3 | Pending |
@@ -145,7 +145,7 @@
 | OUT-11 | Phase 3 | Pending |
 | OUT-12 | Phase 3 | Pending |
 | ANIM-01 | Phase 4 | Pending |
-| ANIM-02 | Phase 2 | Pending |
+| ANIM-02 | Phase 2 | Complete |
 | ANIM-03 | Phase 4 | Pending |
 | ANIM-04 | Phase 4 | Pending |
 | AI-01 | Phase 5 | Pending |

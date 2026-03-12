@@ -5,21 +5,21 @@
 See: .planning/PROJECT.md (updated 2026-03-11)
 
 **Core value:** Terminal interface lets visitors discover Yogi's full professional profile through intuitive commands
-**Current focus:** Phase 2 - Profile Card & Layout
+**Current focus:** Phase 3 - Terminal Core
 
 ## Current Position
 
-Phase: 2 of 6 (Profile Card & Layout)
-Plan: 2 of 3 in current phase
-Status: In progress
-Last activity: 2026-03-11 -- Completed 02-02-PLAN.md
+Phase: 3 of 6 (Terminal Core)
+Plan: 0 of 4 in current phase
+Status: Not started
+Last activity: 2026-03-12 -- Completed Phase 2 (Profile Card & Layout)
 
-Progress: [█████░░░░░░░░░░░░░░] 5/19 plans (~26%)
+Progress: [██████░░░░░░░░░░░░░] 6/19 plans (~32%)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 5
+- Total plans completed: 6
 - Average duration: 2.4 min
 - Total execution time: 0.20 hours
 
@@ -28,11 +28,11 @@ Progress: [█████░░░░░░░░░░░░░░] 5/19 plans
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01 Foundation | 3/3 | 10 min | 3.3 min |
-| 02 Profile Card | 2/3 | 2 min | 1 min |
+| 02 Profile Card | 3/3 | manual | manual |
 
 **Recent Trend:**
-- Last 5 plans: 01-02 (1 min), 01-03 (5 min), 02-01 (1 min), 02-02 (1 min)
-- Trend: improving
+- Last 5 plans: 01-03 (5 min), 02-01 (1 min), 02-02 (1 min), 02-03 (manual)
+- Trend: stable
 
 *Updated after each plan completion*
 
@@ -52,6 +52,9 @@ Recent decisions affecting current work:
 - 01-03: Console palette: near-black bg (#0a0a0f), graduated surface elevation, slate text hierarchy
 - 02-01: Tailwind v4 uses `bg-linear-to-br` (not `bg-gradient-to-br`)
 - 02-02: Custom SVG icons over lucide-react brand icons (deprecated)
+- 02-03: Replaced glassmorphism ProfileCard with interactive 3D badge (React Three Fiber + Rapier physics)
+- 02-03: Set reactStrictMode: false to prevent WebGL Context Lost on Canvas double-mount
+- 02-03: Profile info in header, social links/resume in footer (ProfileActions), 3D badge in left panel
 
 ### Pending Todos
 
@@ -65,6 +68,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-11
-Stopped at: Completed 02-02-PLAN.md
+Last session: 2026-03-12
+Stopped at: Completed Phase 2
 Resume file: None

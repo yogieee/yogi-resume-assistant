@@ -13,7 +13,7 @@ Yogi Assistant is an AI-powered developer portfolio presented as an interactive 
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation & Data Layer** - Project scaffold, types, portfolio data, global styles, theme
-- [ ] **Phase 2: Profile Card & Layout** - Two-panel responsive layout, glassmorphism profile card, social links, resume download
+- [x] **Phase 2: Profile Card & Layout** - Two-panel responsive layout, interactive 3D badge card, social links, resume download
 - [ ] **Phase 3: Terminal Core** - Command parser, all 11 commands, formatted output, input handling, welcome message
 - [ ] **Phase 4: Terminal Polish** - Typing animation, command history, autocomplete, Framer Motion transitions
 - [ ] **Phase 5: AI Integration** - Claude API streaming, mode toggle, rate limiting, error handling, grounded system prompt
@@ -48,9 +48,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Install motion package and create two-panel responsive grid layout
-- [ ] 02-02-PLAN.md — Brand icon SVGs, social links component, and resume PDF placeholder
-- [ ] 02-03-PLAN.md — Profile card with glassmorphism, data binding, animations, and page wiring
+- [x] 02-01-PLAN.md — Install motion package and create two-panel responsive grid layout
+- [x] 02-02-PLAN.md — Brand icon SVGs, social links component, and resume PDF placeholder
+- [x] 02-03-PLAN.md — Interactive 3D badge card with physics, drag interaction, and page wiring
 
 ### Phase 3: Terminal Core
 **Goal**: Visitors can type commands into the terminal and receive fully formatted portfolio content -- the primary interaction model works end-to-end
@@ -126,7 +126,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Data Layer | 3/3 | ✓ Complete | 2026-03-11 |
-| 2. Profile Card & Layout | 0/3 | Not started | - |
+| 2. Profile Card & Layout | 3/3 | ✓ Complete | 2026-03-12 |
 | 3. Terminal Core | 0/4 | Not started | - |
 | 4. Terminal Polish | 0/3 | Not started | - |
 | 5. AI Integration | 0/3 | Not started | - |
