@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-03-11)
 ## Current Position
 
 Phase: 3 of 6 (Terminal Core)
-Plan: 1 of 4 in current phase
+Plan: 3 of 4 in current phase
 Status: In progress
-Last activity: 2026-03-12 -- Completed 03-01-PLAN.md (Terminal Logic Layer)
+Last activity: 2026-03-12 -- Completed 03-03-PLAN.md (Command Output Renderers)
 
-Progress: [███████░░░░░░░░░░░░] 7/19 plans (~37%)
+Progress: [█████████░░░░░░░░░░] 9/19 plans (~47%)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 7
-- Average duration: 2.2 min
-- Total execution time: 0.22 hours
+- Total plans completed: 9
+- Average duration: 1.9 min
+- Total execution time: 0.23 hours
 
 **By Phase:**
 
@@ -29,10 +29,10 @@ Progress: [███████░░░░░░░░░░░░] 7/19 plans
 |-------|-------|-------|----------|
 | 01 Foundation | 3/3 | 10 min | 3.3 min |
 | 02 Profile Card | 3/3 | manual | manual |
-| 03 Terminal Core | 1/4 | 1 min | 1.0 min |
+| 03 Terminal Core | 3/4 | 3 min | 1.0 min |
 
 **Recent Trend:**
-- Last 5 plans: 02-01 (1 min), 02-02 (1 min), 02-03 (manual), 03-01 (1 min)
+- Last 5 plans: 02-03 (manual), 03-01 (1 min), 03-02 (1 min), 03-03 (1 min)
 - Trend: stable/fast
 
 *Updated after each plan completion*
@@ -58,6 +58,8 @@ Recent decisions affecting current work:
 - 02-03: Profile info in header, social links/resume in footer (ProfileActions), 3D badge in left panel
 - 03-01: CommandOutput includes 'clear' variant for type completeness; reducer intercepts before appending
 - 03-01: Pure logic layer in src/lib/terminal/ with zero React imports
+- 03-02: Native browser caret over custom block cursor; placeholder renderers for all output types until Plan 03
+- 03-03: CSS grid for help table alignment; terminal-style [x]/[~] status badges for certifications
 
 ### Pending Todos
 
@@ -71,6 +73,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T10:02:33Z
-Stopped at: Completed 03-01-PLAN.md (Terminal Logic Layer)
+Last session: 2026-03-12T10:05:23Z
+Stopped at: Completed 03-03-PLAN.md (Command Output Renderers)
 Resume file: None
