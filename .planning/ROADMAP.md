@@ -96,12 +96,12 @@ Plans:
   3. AI responses are accurate to Yogi's portfolio data and the AI refuses to answer off-topic questions (no hallucination of unrelated content)
   4. When the API is unavailable or rate-limited, the user sees a clear error message instead of a broken state
   5. The API key is never exposed in client-side code; environment variables are validated on startup
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 05-01: AI mode toggle and terminal mode switching
-- [ ] 05-02: Route Handler with Claude API, system prompt, and streaming
-- [ ] 05-03: Rate limiting, error handling, and security hardening
+- [ ] 05-01-PLAN.md — Install AI SDK, mode toggle, AI shell container with useChat
+- [ ] 05-02-PLAN.md — Route handler with Claude API, system prompt, and streaming
+- [ ] 05-03-PLAN.md — Rate limiting, error handling, and security hardening
 
 ### Phase 6: Production Readiness
 **Goal**: The portfolio is ready to share publicly -- discoverable via search engines, shareable on social media, resilient to errors, and delightful with easter eggs
