@@ -54,18 +54,18 @@
 
 ### AI Mode
 
-- [ ] **AI-01**: Toggle switch between Terminal Mode and AI Mode
-- [ ] **AI-02**: AI endpoint using Claude API via Vercel AI SDK with streaming responses
-- [ ] **AI-03**: System prompt grounded with full portfolio data, constrained to professional experience only
-- [ ] **AI-04**: Temperature 0 to minimize hallucination
-- [ ] **AI-05**: Graceful error handling when API is unavailable or rate limited
-- [ ] **AI-06**: Visual indicator showing AI is "thinking"/streaming
+- [x] **AI-01**: Toggle switch between Terminal Mode and AI Mode
+- [x] **AI-02**: AI endpoint using Claude API via Vercel AI SDK with streaming responses
+- [x] **AI-03**: System prompt grounded with full portfolio data, constrained to professional experience only
+- [x] **AI-04**: Temperature 0 to minimize hallucination
+- [x] **AI-05**: Graceful error handling when API is unavailable or rate limited
+- [x] **AI-06**: Visual indicator showing AI is "thinking"/streaming
 
 ### Security & Performance
 
-- [ ] **SEC-01**: API key server-side only (never NEXT_PUBLIC_ prefixed)
-- [ ] **SEC-02**: Rate limiting on AI endpoint to prevent cost explosion
-- [ ] **SEC-03**: Environment variable validation on startup
+- [x] **SEC-01**: API key server-side only (never NEXT_PUBLIC_ prefixed)
+- [x] **SEC-02**: Rate limiting on AI endpoint to prevent cost explosion
+- [x] **SEC-03**: Environment variable validation on startup
 
 ### Production
 
@@ -148,15 +148,15 @@
 | ANIM-02 | Phase 2 | Complete |
 | ANIM-03 | Phase 4 | Complete |
 | ANIM-04 | Phase 4 | Complete |
-| AI-01 | Phase 5 | Pending |
-| AI-02 | Phase 5 | Pending |
-| AI-03 | Phase 5 | Pending |
-| AI-04 | Phase 5 | Pending |
-| AI-05 | Phase 5 | Pending |
-| AI-06 | Phase 5 | Pending |
-| SEC-01 | Phase 5 | Pending |
-| SEC-02 | Phase 5 | Pending |
-| SEC-03 | Phase 5 | Pending |
+| AI-01 | Phase 5 | Complete |
+| AI-02 | Phase 5 | Complete |
+| AI-03 | Phase 5 | Complete |
+| AI-04 | Phase 5 | Complete |
+| AI-05 | Phase 5 | Complete |
+| AI-06 | Phase 5 | Complete |
+| SEC-01 | Phase 5 | Complete |
+| SEC-02 | Phase 5 | Complete |
+| SEC-03 | Phase 5 | Complete |
 | PROD-01 | Phase 6 | Pending |
 | PROD-02 | Phase 6 | Pending |
 | PROD-03 | Phase 1 | Complete |
@@ -169,4 +169,4 @@
 
 ---
 *Requirements defined: 2026-03-11*
-*Last updated: 2026-03-12 after Phase 4 completion*
+*Last updated: 2026-03-12 after Phase 5 completion*

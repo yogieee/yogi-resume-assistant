@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-03-11)
 
 **Core value:** Terminal interface lets visitors discover Yogi's full professional profile through intuitive commands
-**Current focus:** Phase 5 - AI Integration (COMPLETE)
+**Current focus:** Phase 6 - Production Readiness
 
 ## Current Position
 
-Phase: 5 of 6 (AI Integration) -- PHASE COMPLETE
-Plan: 3 of 3 in current phase
-Status: Phase complete
-Last activity: 2026-03-12 -- Completed 05-03-PLAN.md (Rate Limiting & Error Handling)
+Phase: 6 of 7 (Production Readiness)
+Plan: 0 of 3 in current phase
+Status: Not started
+Last activity: 2026-03-12 -- Completed Phase 5 (AI Integration)
 
 Progress: [████████████████░░░] 16/19 plans (~84%)
 
@@ -81,6 +81,10 @@ Recent decisions affecting current work:
 - 05-03: In-memory rate limiter sufficient for portfolio site (no KV store needed)
 - 05-03: Input disabled during streaming to prevent double-sends
 
+### Roadmap Evolution
+
+- Phase 7 added: AI Caching & Smart Routing — intent router, pre-generated responses, response cache, minimal AI context
+
 ### Pending Todos
 
 None yet.
@@ -92,5 +96,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-12
-Stopped at: Completed 05-03-PLAN.md (Rate Limiting & Error Handling) -- Phase 5 complete
+Stopped at: Completed Phase 5 (AI Integration) -- verified, all 3 plans executed
 Resume file: None

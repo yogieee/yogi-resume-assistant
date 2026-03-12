@@ -16,8 +16,9 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Profile Card & Layout** - Two-panel responsive layout, interactive 3D badge card, social links, resume download
 - [x] **Phase 3: Terminal Core** - Command parser, all 11 commands, formatted output, input handling, welcome message
 - [x] **Phase 4: Terminal Polish** - Typing animation, command history, autocomplete, Framer Motion transitions
-- [ ] **Phase 5: AI Integration** - Claude API streaming, mode toggle, rate limiting, error handling, grounded system prompt
+- [x] **Phase 5: AI Integration** - Claude API streaming, mode toggle, rate limiting, error handling, grounded system prompt
 - [ ] **Phase 6: Production Readiness** - SEO, Open Graph tags, easter eggs, single data source validation, error boundaries
+- [ ] **Phase 7: AI Caching & Smart Routing** - Intent router, pre-generated responses for common questions, response cache, minimal AI context, AI only for novel queries
 
 ## Phase Details
 
@@ -99,9 +100,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 05-01-PLAN.md — Install AI SDK, mode toggle, AI shell container with useChat
-- [ ] 05-02-PLAN.md — Route handler with Claude API, system prompt, and streaming
-- [ ] 05-03-PLAN.md — Rate limiting, error handling, and security hardening
+- [x] 05-01-PLAN.md — Install AI SDK, mode toggle, AI shell container with useChat
+- [x] 05-02-PLAN.md — Route handler with Claude API, system prompt, and streaming
+- [x] 05-03-PLAN.md — Rate limiting, error handling, and security hardening
 
 ### Phase 6: Production Readiness
 **Goal**: The portfolio is ready to share publicly -- discoverable via search engines, shareable on social media, resilient to errors, and delightful with easter eggs
@@ -118,10 +119,25 @@ Plans:
 - [ ] 06-02: Easter egg commands and final polish
 - [ ] 06-03: Error boundaries and production hardening
 
+### Phase 7: AI Caching & Smart Routing
+**Goal**: Minimize AI API calls and cost by routing predictable portfolio questions to pre-generated or cached responses, reserving Claude for truly novel queries -- with minimal context sent per AI call
+**Depends on**: Phase 6
+**Requirements**: None (optimization phase)
+**Success Criteria** (what must be TRUE):
+  1. An intent router classifies incoming questions as known-topic (projects, skills, experience, architecture, contact, etc.) or novel
+  2. Known-topic questions return pre-generated static responses instantly without calling the AI API
+  3. Novel questions are checked against a response cache (hash-based); cache hits return stored responses without an API call
+  4. Cache misses call Claude with a minimal structured context snippet (not the full portfolio) and cache the result
+  5. AI costs are dramatically reduced for typical visitor patterns (most questions are predictable)
+**Plans**: TBD
+
+Plans:
+- [ ] 07-01: TBD (run /gsd:plan-phase 7 to break down)
+
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -129,5 +145,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 | 2. Profile Card & Layout | 3/3 | ✓ Complete | 2026-03-12 |
 | 3. Terminal Core | 4/4 | ✓ Complete | 2026-03-12 |
 | 4. Terminal Polish | 3/3 | ✓ Complete | 2026-03-12 |
-| 5. AI Integration | 0/3 | Not started | - |
+| 5. AI Integration | 3/3 | ✓ Complete | 2026-03-12 |
 | 6. Production Readiness | 0/3 | Not started | - |
+| 7. AI Caching & Smart Routing | 0/0 | Not started | - |
