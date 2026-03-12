@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-03-11)
 ## Current Position
 
 Phase: 7 of 7 (AI Caching & Smart Routing)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-03-12 -- Completed 07-01-PLAN.md
+Last activity: 2026-03-12 -- Completed 07-02-PLAN.md
 
-Progress: [█████████████████░░] 17/19 plans (~89%)
+Progress: [██████████████████░] 18/19 plans (~95%)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 17
-- Average duration: 1.9 min
-- Total execution time: 0.51 hours
+- Total plans completed: 18
+- Average duration: 2.0 min
+- Total execution time: 0.58 hours
 
 **By Phase:**
 
@@ -32,10 +32,10 @@ Progress: [█████████████████░░] 17/19 plan
 | 03 Terminal Core | 4/4 | 4 min | 1.0 min |
 | 04 Terminal Polish | 3/3 | 6 min | 2.0 min |
 | 05 AI Integration | 3/3 | 10 min | 3.3 min |
-| 07 AI Caching | 1/3 | 3 min | 3.0 min |
+| 07 AI Caching | 2/3 | 7 min | 3.5 min |
 
 **Recent Trend:**
-- Last 5 plans: 04-03 (2 min), 05-01 (3 min), 05-02 (4 min), 05-03 (3 min), 07-01 (3 min)
+- Last 5 plans: 05-01 (3 min), 05-02 (4 min), 05-03 (3 min), 07-01 (3 min), 07-02 (4 min)
 - Trend: stable/fast
 
 *Updated after each plan completion*
@@ -84,6 +84,9 @@ Recent decisions affecting current work:
 - 07-01: LanguageModelV3StreamPart uses delta (not textDelta), requires id field, structured finishReason/usage in SDK v6
 - 07-01: Intent rules ordered most-specific-first (certifications before about) to prevent false keyword matches
 - 07-01: textToStreamChunks emits text-start, text-delta[], text-end, finish sequence per SDK v6 stream protocol
+- 07-02: V3 API uses request/response not rawCall -- CachedStreamData adapted accordingly
+- 07-02: Removed wrapGenerate from caching middleware -- streaming is the only path used
+- 07-02: specificationVersion: "v3" required by LanguageModelV3Middleware type
 
 ### Roadmap Evolution
 
@@ -100,5 +103,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-12
-Stopped at: Completed 07-01-PLAN.md (Intent Router & Static Responses)
+Stopped at: Completed 07-02-PLAN.md (Response Cache & Caching Middleware)
 Resume file: None
