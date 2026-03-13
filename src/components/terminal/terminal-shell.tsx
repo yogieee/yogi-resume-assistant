@@ -53,7 +53,7 @@ export function TerminalShell() {
     <div
       ref={containerRef}
       onClick={handleContainerClick}
-      className="flex flex-col h-full bg-console-bg text-xs sm:text-[13px] leading-relaxed"
+      className="flex flex-col h-full min-h-0 bg-console-bg text-xs sm:text-[13px] leading-relaxed"
     >
       {/* Window chrome */}
       <div className="shrink-0 px-3 py-2 sm:px-4 border-b border-console-border bg-console-surface flex items-center gap-1.5 sm:gap-2">

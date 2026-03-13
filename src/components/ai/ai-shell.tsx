@@ -59,7 +59,7 @@ export function AiShell({ active }: AiShellProps) {
   const isThinking = status === "submitted";
 
   return (
-    <div className="flex flex-col h-full bg-console-bg text-xs sm:text-[13px] leading-relaxed">
+    <div className="flex flex-col h-full min-h-0 bg-console-bg text-xs sm:text-[13px] leading-relaxed">
       {/* Window chrome */}
       <div className="shrink-0 px-3 py-2 sm:px-4 border-b border-console-border bg-console-surface flex items-center gap-1.5 sm:gap-2">
         <span className="size-2.5 sm:size-3 rounded-full bg-[#ff5f57]" />
