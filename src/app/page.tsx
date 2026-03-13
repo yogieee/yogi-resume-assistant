@@ -41,7 +41,7 @@ export default function Home() {
             <ModeToggle mode={mode} onToggle={setMode} />
           </div>
           {mode === "ai" ? (
-            <AiShell active={mode === "ai"} />
+            <AiShell active={mode === "ai"} onSwitchToTerminal={() => setMode("terminal")} />
           ) : (
             <TerminalShell />
           )}

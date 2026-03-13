@@ -8,17 +8,15 @@ import { AiThinking } from "./ai-thinking";
 
 interface AiShellProps {
   active: boolean;
+  onSwitchToTerminal?: () => void;
 }
 
-function getErrorMessage(error: Error): string {
+function isRateLimitError(error: Error): boolean {
   const msg = error.message ?? "";
-  if (msg.includes("429") || msg.toLowerCase().includes("too many")) {
-    return "I\u2019m getting a lot of questions right now. Try again in a moment.";
-  }
-  return "Something went wrong on my end. Please try again.";
+  return msg.includes("429") || msg.toLowerCase().includes("too many");
 }
 
-export function AiShell({ active }: AiShellProps) {
+export function AiShell({ active, onSwitchToTerminal }: AiShellProps) {
   const { messages, sendMessage, status, error, stop } = useChat({
     onError: (err) => {
       console.error("Chat error:", err);
@@ -87,9 +85,30 @@ export function AiShell({ active }: AiShellProps) {
             <span className="text-glow-cyan text-xs font-bold">
               yogi-ai &gt;&nbsp;
             </span>
-            <span className="text-console-text-dim text-xs">
-              {getErrorMessage(error)}
-            </span>
+            {isRateLimitError(error) ? (
+              <span className="text-console-text-dim text-xs">
+                I&apos;m getting a lot of questions right now!
+                {onSwitchToTerminal ? (
+                  <>
+                    {" "}Meanwhile, you can explore Yogi&apos;s portfolio using the{" "}
+                    <button
+                      type="button"
+                      onClick={onSwitchToTerminal}
+                      className="text-glow-green underline underline-offset-2 hover:brightness-125 transition-colors"
+                    >
+                      terminal
+                    </button>
+                    {" "}&mdash; type <code className="text-glow-cyan">help</code> to get started.
+                  </>
+                ) : (
+                  " Try again in a moment."
+                )}
+              </span>
+            ) : (
+              <span className="text-console-text-dim text-xs">
+                Something went wrong on my end. Please try again.
+              </span>
+            )}
           </div>
         )}
 

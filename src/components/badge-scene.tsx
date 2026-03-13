@@ -196,9 +196,13 @@ function Band({ maxSpeed = 50, minSpeed = 10, canvasHovered = false }) {
                 map={materials.base.map}
                 map-anisotropy={16}
                 clearcoat={1}
-                clearcoatRoughness={0.15}
-                roughness={0.3}
+                clearcoatRoughness={0.1}
+                roughness={0.25}
                 metalness={0.5}
+                iridescence={0.3}
+                iridescenceIOR={1.3}
+                reflectivity={0.5}
+                envMapIntensity={0.8}
               />
             </mesh>
             {/* Badge image overlay — clipped by card stencil (rounded corners) */}
