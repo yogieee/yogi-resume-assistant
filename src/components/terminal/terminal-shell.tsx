@@ -20,7 +20,7 @@ export function TerminalShell() {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [state.history.length]);
 
-  // Resume download side effect — open dialog instead of direct download
+  // Resume download side effect
   useEffect(() => {
     const latest = state.history[state.history.length - 1];
     if (latest?.output.type === "resume") {
@@ -28,7 +28,6 @@ export function TerminalShell() {
     }
   }, [state.history]);
 
-  // Click-to-focus: clicking anywhere in terminal focuses the input
   const handleContainerClick = useCallback(() => {
     inputRef.current?.focus();
   }, []);
@@ -53,15 +52,15 @@ export function TerminalShell() {
     <div
       ref={containerRef}
       onClick={handleContainerClick}
-      className="flex flex-col h-full min-h-0 bg-console-bg text-xs sm:text-[13px] leading-relaxed"
+      className="flex flex-col h-full min-h-0 bg-console-bg/80 text-xs sm:text-[13px] leading-relaxed cursor-text"
     >
       {/* Window chrome */}
-      <div className="shrink-0 px-3 py-2 sm:px-4 border-b border-console-border bg-console-surface flex items-center gap-1.5 sm:gap-2">
-        <span className="size-2.5 sm:size-3 rounded-full bg-[#ff5f57]" />
-        <span className="size-2.5 sm:size-3 rounded-full bg-[#febc2e]" />
-        <span className="size-2.5 sm:size-3 rounded-full bg-[#28c840]" />
-        <span className="ml-2 sm:ml-4 text-console-text-dim text-xs truncate">
-          yogi@portfolio — terminal
+      <div className="shrink-0 px-3 py-2.5 sm:px-4 border-b border-console-border/30 bg-console-surface/40 flex items-center gap-1.5 sm:gap-2 cursor-default">
+        <span className="size-2.5 sm:size-3 rounded-full bg-[#ff5f57]/80" />
+        <span className="size-2.5 sm:size-3 rounded-full bg-[#febc2e]/80" />
+        <span className="size-2.5 sm:size-3 rounded-full bg-[#28c840]/80" />
+        <span className="ml-2 sm:ml-4 text-console-text-dim/60 text-[11px] tracking-wide truncate">
+          yogi@portfolio &mdash; terminal
         </span>
       </div>
 
@@ -71,9 +70,9 @@ export function TerminalShell() {
           {state.history.map((entry) => (
             <motion.div
               key={entry.id}
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.15, ease: "easeOut" }}
+              transition={{ duration: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
               layout={false}
             >
               <TerminalOutputEntry entry={entry} />

@@ -47,7 +47,14 @@ export function TypingEffect({
       className={done ? undefined : "cursor-pointer"}
     >
       {children.slice(0, charCount)}
-      {!done && <span className="animate-pulse text-glow-green">|</span>}
+      {!done && (
+        <span
+          className="text-glow-green"
+          style={{ animation: "cursor-blink 1s steps(1) infinite" }}
+        >
+          |
+        </span>
+      )}
     </span>
   );
 }

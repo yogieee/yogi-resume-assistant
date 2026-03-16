@@ -47,7 +47,6 @@ export const TerminalInput = forwardRef<TerminalInputHandle, TerminalInputProps>
       if (!trimmed) return "";
       const matches = getCompletions(trimmed);
       if (matches.length === 0) return "";
-      // Show the remaining characters of the first match
       return matches[0].slice(trimmed.length);
     }, [value]);
 
@@ -60,8 +59,11 @@ export const TerminalInput = forwardRef<TerminalInputHandle, TerminalInputProps>
           }}
           className="flex items-center"
         >
-          <span className="text-glow-green font-bold select-none shrink-0"><span className="hidden sm:inline">yogi@portfolio</span><span className="sm:hidden">yogi</span></span>
-          <span className="text-console-text-dim select-none shrink-0">&nbsp;%&nbsp;</span>
+          <span className="text-glow-green font-bold select-none shrink-0">
+            <span className="hidden sm:inline">yogi@portfolio</span>
+            <span className="sm:hidden">yogi</span>
+          </span>
+          <span className="text-console-text-dim/50 select-none shrink-0">&nbsp;%&nbsp;</span>
           <div className="relative flex-1">
             <input
               ref={inputRef}
@@ -94,7 +96,7 @@ export const TerminalInput = forwardRef<TerminalInputHandle, TerminalInputProps>
               className="w-full bg-transparent border-none outline-none ring-0 text-console-text caret-glow-green focus:outline-none focus:ring-0"
             />
             {ghostSuffix && (
-              <span className="pointer-events-none absolute top-0 left-0 whitespace-pre text-console-text-dim/40">
+              <span className="pointer-events-none absolute top-0 left-0 whitespace-pre text-console-text-dim/30">
                 <span className="invisible">{value}</span>
                 {ghostSuffix}
               </span>

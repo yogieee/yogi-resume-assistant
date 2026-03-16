@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useCallback, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
+import { motion, AnimatePresence } from "motion/react";
 import { Download, X, Loader2 } from "lucide-react";
 
 interface ResumeDialogProps {
@@ -79,102 +81,115 @@ export function ResumeDialog({ open, onClose }: ResumeDialogProps) {
     [name, email, validate, onClose]
   );
 
-  if (!open) return null;
-
-  return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
-      onClick={(e) => {
-        if (e.target === e.currentTarget) onClose();
-      }}
-    >
-      <div className="relative w-full max-w-sm mx-3 sm:mx-4 border border-console-border bg-console-surface rounded-xl shadow-glow-sm overflow-hidden">
-        {/* Header */}
-        <div className="flex items-center justify-between px-4 py-3 sm:px-5 sm:py-4 border-b border-console-border">
-          <div className="flex items-center gap-2 text-glow-green text-sm font-medium">
-            <Download className="size-4" />
-            Download Resume
-          </div>
-          <button
-            onClick={onClose}
-            className="text-console-text-dim hover:text-console-text transition-colors"
+  return createPortal(
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto p-4 bg-black/60 backdrop-blur-md"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) onClose();
+          }}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 10 }}
+            transition={{ duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="relative w-full max-w-sm m-auto border border-console-border/50 bg-console-surface rounded-xl shadow-glow-sm overflow-hidden"
           >
-            <X className="size-4" />
-          </button>
-        </div>
-
-        {/* Body */}
-        <form onSubmit={handleSubmit} className="p-4 sm:p-5 space-y-4">
-          <p className="text-console-text-dim text-xs leading-relaxed">
-            Enter your details to access the resume. You&apos;ll get the PDF
-            instantly.
-          </p>
-
-          {/* Name */}
-          <div className="space-y-1.5">
-            <label
-              htmlFor="resume-name"
-              className="text-xs text-console-text-dim"
-            >
-              Name
-            </label>
-            <input
-              ref={nameRef}
-              id="resume-name"
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Your name"
-              className="w-full px-3 py-2 text-sm bg-console-bg border border-console-border rounded-lg text-console-text placeholder:text-console-text-dim/50 focus:outline-none focus:border-glow-green/50 focus:shadow-glow-sm transition-all"
-            />
-            {errors.name && (
-              <p className="text-xs text-glow-red">{errors.name}</p>
-            )}
-          </div>
-
-          {/* Email */}
-          <div className="space-y-1.5">
-            <label
-              htmlFor="resume-email"
-              className="text-xs text-console-text-dim"
-            >
-              Email
-            </label>
-            <input
-              id="resume-email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@example.com"
-              className="w-full px-3 py-2 text-sm bg-console-bg border border-console-border rounded-lg text-console-text placeholder:text-console-text-dim/50 focus:outline-none focus:border-glow-green/50 focus:shadow-glow-sm transition-all"
-            />
-            {errors.email && (
-              <p className="text-xs text-glow-red">{errors.email}</p>
-            )}
-          </div>
-
-          {/* Submit */}
-          <button
-            type="submit"
-            disabled={status !== "idle"}
-            className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium rounded-lg bg-glow-green/10 text-glow-green border border-glow-green/30 hover:bg-glow-green/20 hover:shadow-glow-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {status === "loading" ? (
-              <>
-                <Loader2 className="size-4 animate-spin" />
-                Downloading...
-              </>
-            ) : status === "success" ? (
-              "Downloaded!"
-            ) : (
-              <>
+            {/* Header */}
+            <div className="flex items-center justify-between px-4 py-3 sm:px-5 sm:py-4 border-b border-console-border/30">
+              <div className="flex items-center gap-2 text-glow-green text-sm font-medium">
                 <Download className="size-4" />
                 Download Resume
-              </>
-            )}
-          </button>
-        </form>
-      </div>
-    </div>
+              </div>
+              <button
+                onClick={onClose}
+                className="text-console-text-dim hover:text-console-text transition-colors cursor-pointer p-1 rounded-md hover:bg-console-elevated/50"
+              >
+                <X className="size-4" />
+              </button>
+            </div>
+
+            {/* Body */}
+            <form onSubmit={handleSubmit} className="p-4 sm:p-5 space-y-4">
+              <p className="text-console-text-dim/70 text-xs leading-relaxed">
+                Enter your details to access the resume. You&apos;ll get the PDF
+                instantly.
+              </p>
+
+              {/* Name */}
+              <div className="space-y-1.5">
+                <label
+                  htmlFor="resume-name"
+                  className="text-xs text-console-text-dim"
+                >
+                  Name
+                </label>
+                <input
+                  ref={nameRef}
+                  id="resume-name"
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Your name"
+                  className="w-full px-3 py-2.5 text-sm bg-console-bg/80 border border-console-border/50 rounded-lg text-console-text placeholder:text-console-text-dim/40 focus:outline-none focus:border-glow-green/40 focus:shadow-glow-sm transition-all"
+                />
+                {errors.name && (
+                  <p className="text-xs text-glow-red">{errors.name}</p>
+                )}
+              </div>
+
+              {/* Email */}
+              <div className="space-y-1.5">
+                <label
+                  htmlFor="resume-email"
+                  className="text-xs text-console-text-dim"
+                >
+                  Email
+                </label>
+                <input
+                  id="resume-email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@example.com"
+                  className="w-full px-3 py-2.5 text-sm bg-console-bg/80 border border-console-border/50 rounded-lg text-console-text placeholder:text-console-text-dim/40 focus:outline-none focus:border-glow-green/40 focus:shadow-glow-sm transition-all"
+                />
+                {errors.email && (
+                  <p className="text-xs text-glow-red">{errors.email}</p>
+                )}
+              </div>
+
+              {/* Submit */}
+              <button
+                type="submit"
+                disabled={status !== "idle"}
+                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium rounded-lg bg-glow-green/8 text-glow-green border border-glow-green/25 hover:bg-glow-green/15 hover:shadow-glow-sm transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+              >
+                {status === "loading" ? (
+                  <>
+                    <Loader2 className="size-4 animate-spin" />
+                    Downloading...
+                  </>
+                ) : status === "success" ? (
+                  "Downloaded!"
+                ) : (
+                  <>
+                    <Download className="size-4" />
+                    Download Resume
+                  </>
+                )}
+              </button>
+            </form>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>,
+    document.body
   );
 }

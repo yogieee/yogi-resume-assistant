@@ -7,8 +7,10 @@ const BadgeScene = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex items-center justify-center w-full h-full bg-black text-glow-green text-xs font-mono border border-console-border animate-pulse shadow-glow-sm">
-        INITIALIZING 3D BADGE_SYSTEM...
+      <div className="flex items-center justify-center w-full h-full bg-console-bg text-glow-green/60 text-[10px] font-mono tracking-[0.15em] uppercase">
+        <span style={{ animation: "cursor-blink 1s steps(1) infinite" }}>
+          INITIALIZING 3D BADGE_SYSTEM...
+        </span>
       </div>
     ),
   },
