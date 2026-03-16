@@ -1,7 +1,7 @@
 import type { Intent } from "./intent-router";
 import { portfolio } from "@/data/portfolio";
 
-type TopicKey =
+export type TopicKey =
   | "about"
   | "skills"
   | "experience"
@@ -114,6 +114,25 @@ const BASE_PROMPT = `You are Yogi AI, portfolio assistant for ${portfolio.about.
 export function buildMinimalContext(topic: Intent | null): string {
   const topicKeys = getTopicKeys(topic);
   const sections = topicKeys
+    .map((key) => contextBuilders[key]())
+    .join("\n\n");
+
+  return `${BASE_PROMPT}\n\n## Portfolio Data\n\n${sections}`;
+}
+
+/**
+ * Build context for a compound (multi-intent) query.
+ * Merges topic keys from all intents, deduplicates, and always includes "about".
+ */
+export function buildCompoundContext(intents: Intent[]): string {
+  const allKeys = new Set<TopicKey>(["about"]);
+  for (const intent of intents) {
+    for (const key of getTopicKeys(intent)) {
+      allKeys.add(key);
+    }
+  }
+
+  const sections = Array.from(allKeys)
     .map((key) => contextBuilders[key]())
     .join("\n\n");
 

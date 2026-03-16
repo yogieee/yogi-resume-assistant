@@ -1,8 +1,8 @@
 import { streamText, UIMessage, convertToModelMessages, wrapLanguageModel } from "ai";
 import { anthropic } from "@ai-sdk/anthropic";
-import { classifyIntent } from "@/lib/ai/intent-router";
+import { classifyIntents } from "@/lib/ai/intent-router";
 import { getStaticResponse, textToStreamChunks } from "@/lib/ai/static-responses";
-import { buildMinimalContext } from "@/lib/ai/topic-context";
+import { buildMinimalContext, buildCompoundContext } from "@/lib/ai/topic-context";
 import { cachingMiddleware } from "@/lib/ai/caching-middleware";
 import { responseCache, hashMessage, DEFAULT_TTL } from "@/lib/ai/response-cache";
 import { getEnv } from "@/lib/env";
@@ -43,14 +43,17 @@ export async function POST(req: Request) {
         .map((p) => p.text)
         .join(" ") ?? "";
 
-    // Classify intent (keyword/regex, no AI call)
-    const intent = classifyIntent(lastText);
+    // Classify all matching intents (keyword/regex, no AI call)
+    const intents = classifyIntents(lastText);
+    const isCompound = intents.length > 1 && !intents.includes("novel");
+    const primaryIntent = intents[0];
 
-    // Tier 1: Pre-seed cache for known topics
-    if (intent !== "novel") {
+    // Tier 1: Pre-seed cache for single-topic known queries only.
+    // Compound queries skip static responses -- let Claude synthesise across topics.
+    if (!isCompound && primaryIntent !== "novel") {
       const cacheKey = hashMessage(lastText);
       if (!responseCache.get(cacheKey)) {
-        const staticText = getStaticResponse(intent);
+        const staticText = getStaticResponse(primaryIntent);
         const chunks = textToStreamChunks(staticText);
         responseCache.set(
           cacheKey,
@@ -61,21 +64,26 @@ export async function POST(req: Request) {
       // Fall through to streamText -- middleware will find cache hit
     }
 
+    // Build system prompt: compound queries get merged context from all intents
+    const systemPrompt = isCompound
+      ? buildCompoundContext(intents)
+      : buildMinimalContext(primaryIntent !== "novel" ? primaryIntent : null);
+
     // Debug logging (development only)
     if (process.env.NODE_ENV === "development") {
       const tierLabel =
-        intent !== "novel"
+        !isCompound && primaryIntent !== "novel"
           ? "static"
           : responseCache.get(hashMessage(lastText))
             ? "cache-hit"
             : "api-call";
-      console.log(`[AI Route] intent=${intent}, tier=${tierLabel}`);
+      console.log(`[AI Route] intents=[${intents.join(",")}], compound=${isCompound}, tier=${tierLabel}`);
     }
 
     // Tiers 2 & 3: Caching middleware handles cache hit (replay) or miss (Claude call + cache)
     const result = streamText({
       model: cachedModel,
-      system: buildMinimalContext(intent !== "novel" ? intent : null),
+      system: systemPrompt,
       messages: await convertToModelMessages(messages.slice(-20)),
       temperature: 0,
       maxOutputTokens: 1024,

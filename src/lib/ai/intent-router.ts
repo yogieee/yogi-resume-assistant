@@ -166,16 +166,27 @@ const INTENT_RULES: IntentRule[] = [
  * Pure keyword/regex matching -- no AI call needed.
  */
 export function classifyIntent(message: string): Intent {
+  const intents = classifyIntents(message);
+  return intents[0];
+}
+
+/**
+ * Detect ALL matching intents from a user message.
+ * Returns every matched intent (ordered by rule priority), or ["novel"] if none match.
+ * Use this for complex queries that span multiple topics.
+ */
+export function classifyIntents(message: string): Intent[] {
   const normalized = message.toLowerCase().trim();
+  const matched: Intent[] = [];
 
   for (const rule of INTENT_RULES) {
-    if (rule.keywords.some((kw) => normalized.includes(kw))) {
-      return rule.intent;
-    }
-    if (rule.patterns?.some((p) => p.test(normalized))) {
-      return rule.intent;
+    const hit =
+      rule.keywords.some((kw) => normalized.includes(kw)) ||
+      rule.patterns?.some((p) => p.test(normalized));
+    if (hit) {
+      matched.push(rule.intent);
     }
   }
 
-  return "novel";
+  return matched.length > 0 ? matched : ["novel"];
 }
