@@ -11,11 +11,16 @@ interface ResumeDialogProps {
 }
 
 export function ResumeDialog({ open, onClose }: ResumeDialogProps) {
+  const [mounted, setMounted] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState<{ name?: string; email?: string }>({});
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
   const nameRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (open) {
@@ -80,6 +85,8 @@ export function ResumeDialog({ open, onClose }: ResumeDialogProps) {
     },
     [name, email, validate, onClose]
   );
+
+  if (!mounted) return null;
 
   return createPortal(
     <AnimatePresence>
