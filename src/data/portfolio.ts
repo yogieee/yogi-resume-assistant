@@ -303,7 +303,8 @@ The platform enables users to define document fields visually, run batch extract
     },
     {
       name: "AWS Generative AI Certification",
-      status: "In Progress",
+      status: "Active",
+      period: "2026",
     },
   ],
 
