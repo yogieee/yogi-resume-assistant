@@ -2,35 +2,71 @@ import type { PortfolioData } from "@/types/portfolio";
 
 export const portfolio: PortfolioData = {
   about: {
-    name: "Yoganand Govind",
-    role: "Senior Software Developer | Cloud & AI Platform Engineer",
+    name: "Yogananda Govind",
+    role: "AI & Cloud Engineer | AWS Solutions Architect | Serverless & AI Platform Builder",
     avatar: "",
-    tagline:
-      "Designing AI-powered cloud platforms and enterprise automation systems",
-
+    tagline: "Available for Contract | Remote | Hybrid",
     location: "United Kingdom",
-
     summary: `
-Full-stack engineer with 12+ years of experience building enterprise applications, now focused on cloud-native AI solutions with AWS.
+Enterprise Software Engineer transitioning into AI and Cloud Engineering, with 12+ years of experience building large-scale backend systems.
 
-Recently designed and launched Autowired.ai, a serverless SaaS platform for intelligent document processing using Amazon Textract and Bedrock Data Automation.
+Recently architected and launched a production serverless AI SaaS platform on AWS, leveraging Bedrock, Textract, Lambda, and DynamoDB.
 
-AWS Solutions Architect Associate certified with strong experience creating scalable, cost-efficient cloud systems.
+AWS Certified Solutions Architect and AWS Certified Generative AI Developer – Professional, with hands-on experience in cloud-native system design and AI-driven automation.
 
 Strong background in enterprise system architecture through extensive work with IBM Cúram Social Program Management (SPM) platforms supporting UK Government welfare services.
 
-Experienced across full-stack development, cloud infrastructure, event-driven microservices, and AI-integrated workflows.
+Extensive experience delivering UK public sector, policy-driven benefit systems in high-availability environments. Experienced transitioning from legacy enterprise systems to cloud-native architectures. Comfortable in remote, distributed teams.
     `,
   },
 
   skills: [
     {
-      category: "Programming Languages",
+      category: "Cloud & Serverless Architecture",
+      skills: [
+        { name: "AWS Lambda" },
+        { name: "API Gateway" },
+        { name: "DynamoDB" },
+        { name: "S3" },
+        { name: "Step Functions" },
+        { name: "SQS" },
+        { name: "EventBridge" },
+        { name: "SNS" },
+        { name: "SES" },
+        { name: "IAM" },
+        { name: "CloudWatch" },
+        { name: "AWS CDK" },
+        { name: "Multi-tenant SaaS Architecture" },
+        { name: "Event-Driven Systems" },
+        { name: "Cost Optimisation" },
+      ],
+    },
+
+    {
+      category: "AI & Intelligent Automation",
+      skills: [
+        { name: "Amazon Bedrock" },
+        { name: "Amazon Textract" },
+        { name: "Bedrock Data Automation" },
+        { name: "LLM-Powered Document Intelligence" },
+        { name: "AI Workflow Orchestration" },
+        { name: "Document Processing Pipelines" },
+        { name: "Claude API" },
+      ],
+    },
+
+    {
+      category: "Backend & Distributed Systems",
       skills: [
         { name: "Java" },
         { name: "TypeScript" },
-        { name: "JavaScript" },
-        { name: "SQL" },
+        { name: "Node.js" },
+        { name: "Spring Boot" },
+        { name: "REST APIs" },
+        { name: "SOAP APIs" },
+        { name: "Microservices" },
+        { name: "High-Volume Data Processing" },
+        { name: "Performance Tuning" },
       ],
     },
 
@@ -46,47 +82,6 @@ Experienced across full-stack development, cloud infrastructure, event-driven mi
     },
 
     {
-      category: "Backend",
-      skills: [
-        { name: "Spring Boot" },
-        { name: "Node.js" },
-        { name: "REST APIs" },
-        { name: "SOAP APIs" },
-        { name: "Microservices" },
-      ],
-    },
-
-    {
-      category: "Cloud (AWS)",
-      skills: [
-        { name: "AWS Lambda" },
-        { name: "API Gateway" },
-        { name: "DynamoDB" },
-        { name: "S3" },
-        { name: "Step Functions" },
-        { name: "EventBridge" },
-        { name: "SQS" },
-        { name: "SNS" },
-        { name: "SES" },
-        { name: "IAM" },
-        { name: "CloudWatch" },
-        { name: "CDK" },
-      ],
-    },
-
-    {
-      category: "AI & Data Platforms",
-      skills: [
-        { name: "Amazon Bedrock" },
-        { name: "Bedrock Data Automation" },
-        { name: "Claude API" },
-        { name: "Amazon Textract" },
-        { name: "LLM Applications" },
-        { name: "Document AI Pipelines" },
-      ],
-    },
-
-    {
       category: "Databases",
       skills: [
         { name: "DynamoDB" },
@@ -97,15 +92,16 @@ Experienced across full-stack development, cloud infrastructure, event-driven mi
     },
 
     {
-      category: "DevOps & Infrastructure",
+      category: "DevOps & Delivery",
       skills: [
-        { name: "AWS CDK" },
+        { name: "CI/CD Automation" },
         { name: "GitHub Actions" },
         { name: "Jenkins" },
         { name: "GitLab" },
         { name: "SVN" },
         { name: "Vercel" },
-        { name: "CI/CD Pipelines" },
+        { name: "Agile / Scrum" },
+        { name: "Production Support (SLA-driven)" },
       ],
     },
 
@@ -126,53 +122,35 @@ Experienced across full-stack development, cloud infrastructure, event-driven mi
       title: "Senior Software Engineer",
       company: "Mphasis UK Limited",
       location: "London, United Kingdom",
-      period: "Jan 2019 - Present",
+      period: "2014 - Present",
 
       description:
         "Enterprise welfare platform development for UK Government departments using IBM Cúram Social Program Management (SPM). Project: Personal Independence Payment (PIP).",
 
       contributions: [
-        "Architected, designed, and developed core Cúram SPM modules, UIM pages, IEG scripts, evidence, workflows, and backend services, delivering end-to-end functionality aligned with PIP business processes and legislative changes.",
+        "Delivered end-to-end Cúram SPM solutions across multiple modules, supporting millions of PIP claims annually.",
 
-        "Led feature development across multiple Cúram functional areas, including IEG, Batch Framework, Case & Participant Management, Financials, Task Management, Evidence Models, CER Rules, UIM Components, Codetables, and system administration modules.",
+        "Led development across Case Management, Financials, Task Management, and Batch Framework, ensuring scalable and maintainable solutions.",
 
-        "Collaborated closely with BAs, architects, testers, and product owners to prioritise, refine, and deliver business-critical PIP enhancements across multiple release cycles.",
+        "Translated complex business and policy requirements into rule-driven system implementations (CER).",
 
-        "Delivered high-quality, test-driven solutions using JUnit and TDD practices, improving reliability, regression coverage, and maintainability.",
+        "Optimised batch processing and SQL queries, improving performance for high-volume workloads (millions of records).",
 
-        "Conducted R&D, proof-of-concept prototyping, and UI wireframing for new capability ideas; built sandbox implementations allowing stakeholders to trial new features and provide early feedback.",
+        "Resolved Sev1/Sev2 production incidents within strict SLA timelines in a high-availability environment.",
 
-        "Followed Agile/Scrum practices for sprint planning, grooming, technical design, development, and release execution.",
+        "Contributed to production deployments, go-live support, and post-release validation, ensuring minimal disruption to live services.",
 
-        "Performed in-depth code reviews, established Cúram best practices, and provided continuous technical mentorship to junior developers and new joiners.",
+        "Collaborated with BAs, architects, and product owners to deliver iterative enhancements across multiple release cycles.",
 
-        "Diagnosed and resolved complex production incidents, performance bottlenecks, and system defects, delivering hotfixes and stability improvements within tight operational timelines.",
+        "Established development best practices and conducted code reviews, improving code quality and maintainability.",
 
-        "Participated in production deployments, supporting go-live activities, monitoring, and post-release validation to ensure minimal disruption to PIP service users.",
+        "Mentored junior developers and supported onboarding, improving team delivery capability.",
 
-        "Managed version control and CI/CD pipelines using GitLab, SVN, and Jenkins, ensuring automated builds, consistent deployments, and controlled release processes.",
+        "Developed integrations with external systems using REST/SOAP services and custom Java components.",
 
-        "Administered and optimised Oracle and MongoDB databases, wrote advanced SQL queries, performed indexing, query tuning, and data analysis to support high-volume PIP workloads.",
+        "Managed CI/CD pipelines using Jenkins, GitLab, TortoiseGit and SVN, ensuring consistent and reliable deployments.",
 
-        "Developed scalable integrations using REST/SOAP services, facade classes, and custom Java components for external assessment, payment, and compliance systems.",
-
-        "Delivered knowledge-sharing sessions, onboarding guides, and technical documentation, improving team capability and cross-functional understanding.",
-      ],
-    },
-    {
-      title: "Software Developer",
-      company: "Mphasis (India)",
-      location: "India",
-      period: "2014 - Dec 2018",
-
-      description:
-        "Software development on IBM Cúram SPM enterprise welfare platform before transitioning to the UK division.",
-
-      contributions: [
-        "Developed and maintained IBM Cúram SPM modules for enterprise welfare applications.",
-        "Built backend services and integration layers using Java/J2EE.",
-        "Contributed to database management and SQL performance optimisation with Oracle.",
-        "Participated in Agile sprint cycles, code reviews, and technical documentation.",
+        "Conducted R&D and proof-of-concept development to evaluate new features and implementation approaches.",
       ],
     },
   ],
@@ -181,38 +159,46 @@ Experienced across full-stack development, cloud infrastructure, event-driven mi
     {
       name: "Autowired.ai",
 
-      subtitle: "AI-Powered Document Extraction Platform",
+      subtitle: "AI-Powered Document Intelligence Platform",
 
       description: `
-Autowired.ai is an intelligent document processing platform that enables businesses to extract structured data from PDFs and images using visual templates and AI-powered automation, eliminating manual data entry.
+Autowired.ai is an intelligent document processing platform that enables businesses to extract structured data from documents using AI-driven templates and LLM orchestration, eliminating manual data entry.
 
-The platform enables users to define document fields visually, run batch extraction pipelines, and export structured JSON/XML data.
+Designed and deployed as a multi-tenant, serverless SaaS platform enabling businesses to extract structured data from documents using AI-driven templates and LLM orchestration.
       `,
 
       features: [
         {
-          name: "Real-time canvas editor built in Next.js 15 with optimised state management (Zustand + React Query)",
+          name: "Multi-Tenant SaaS Architecture with strict tenant isolation using DynamoDB single-table design with partition key scoping and tenant-aware access control",
         },
 
         {
-          name: "AI-powered document processing pipeline using Amazon Bedrock Data Automation and Amazon Textract",
+          name: "Asynchronous Batch Processing Pipeline using S3 triggers, SQS queues, AWS Lambda, and Step Functions to process high document volumes reliably",
         },
 
         {
-          name: "Serverless batch processing architecture using AWS Step Functions and SQS for reliable document handling",
+          name: "Token-Aware AI Processing with Amazon Bedrock, controlled prompt orchestration and intelligent caching (24hr TTL) lowering AI costs by ~40%",
         },
 
         {
-          name: "Multi-tenant SaaS architecture with strict tenant-level data isolation",
+          name: "Subscription & Usage-Based Model with Stripe for subscription management, usage limits, and tier-based document processing quotas",
         },
 
-        { name: "Real-time processing status updates and batch notifications" },
+        {
+          name: "Cost-Optimised Serverless Design: fully serverless stack (Lambda, DynamoDB, S3, API Gateway) enabling automatic scaling with minimal idle cost",
+        },
+
+        {
+          name: "Real-time canvas editor built in Next.js with optimised state management (Zustand + React Query)",
+        },
 
         { name: "Export extracted structured data in JSON and XML formats" },
 
-        { name: "Stripe subscription billing and Clerk authentication integration" },
+        { name: "Clerk authentication integration" },
 
-        { name: "Hybrid deployment: Vercel (frontend) + AWS CDK (backend infrastructure)" },
+        {
+          name: "Hybrid deployment: Vercel (frontend) + AWS CDK (backend infrastructure)",
+        },
       ],
 
       architecture: [
@@ -222,13 +208,13 @@ The platform enables users to define document fields visually, run batch extract
 
         "AWS Lambda microservices (15+ functions) handling document processing workflows",
 
-        "S3 for secure document storage and processing pipeline input",
+        "S3 for secure document storage with event-driven triggers into processing pipeline",
 
         "Amazon Textract OCR pipeline for text detection",
 
         "Amazon Bedrock Data Automation for AI-powered data structuring and validation",
 
-        "DynamoDB single-table design for multi-tenant metadata storage",
+        "DynamoDB single-table design for multi-tenant metadata storage with partition key scoping",
 
         "SQS queues and Step Functions orchestrating asynchronous batch workflows",
 
@@ -262,35 +248,40 @@ The platform enables users to define document fields visually, run batch extract
   achievements: [
     {
       description:
-        "Built and launched a cloud-native AI SaaS platform (Autowired.ai) for intelligent document automation.",
+        "Built and launched Autowired.ai, a production-grade multi-tenant serverless AI SaaS platform for intelligent document automation on AWS.",
     },
 
     {
       description:
-        "Reduced document processing time by over 90% compared to manual extraction through automated AI-powered pipelines.",
+        "Reduced document processing time by over 90% compared to manual extraction through automated AI-powered pipelines using Bedrock and Textract.",
     },
 
     {
       description:
-        "Designed a serverless architecture orchestrating 15+ Lambda microservices using event-driven AWS services.",
+        "Designed a serverless architecture orchestrating 15+ Lambda microservices using event-driven AWS services (S3, SQS, Step Functions, EventBridge).",
     },
 
     {
       description:
-        "Implemented cost optimisation strategies including BDA caching (24 hr TTL), reducing AI processing costs by approximately 40%.",
+        "Implemented token-aware AI processing with intelligent caching (24hr TTL), reducing AI inference costs by approximately 40%.",
     },
 
     {
       description:
-        "Delivered enterprise welfare system features supporting large-scale government services in the UK.",
+        "Delivered enterprise welfare system features supporting millions of PIP claims annually for UK Government in high-availability, SLA-driven environments.",
     },
   ],
 
   certifications: [
     {
+      name: "AWS Certified Generative AI Developer – Professional",
+      status: "Active",
+      period: "2026 - 2029",
+    },
+    {
       name: "AWS Certified Solutions Architect – Associate",
       status: "Active",
-      period: "2025 - 2029",
+      period: "2025 - 2028",
     },
     {
       name: "AWS Certified Developer – Associate",
@@ -298,13 +289,8 @@ The platform enables users to define document fields visually, run batch extract
       period: "2021 - 2024",
     },
     {
-      name: "IBM Cúram V6.0.4 Application Developer",
+      name: "IBM Cúram V6 Application Developer",
       status: "Active",
-    },
-    {
-      name: "AWS Generative AI Certification",
-      status: "Active",
-      period: "2026",
     },
   ],
 
@@ -319,8 +305,8 @@ The platform enables users to define document fields visually, run batch extract
     {
       type: "email",
       label: "Email",
-      value: "Yoganand.Govind@gmail.com",
-      url: "mailto:Yoganand.Govind@gmail.com",
+      value: "yoganand.govind@gmail.com",
+      url: "mailto:yoganand.govind@gmail.com",
     },
 
     {
@@ -335,6 +321,13 @@ The platform enables users to define document fields visually, run batch extract
       label: "GitHub",
       value: "yogieee",
       url: "https://github.com/yogieee",
+    },
+
+    {
+      type: "portfolio",
+      label: "Portfolio",
+      value: "yoganandgovind.me",
+      url: "https://www.yoganandgovind.me",
     },
   ],
 
@@ -353,7 +346,7 @@ The platform enables users to define document fields visually, run batch extract
 
   interests: {
     learning:
-      "Passionate about designing modern, user-centric web applications. Actively exploring Cloud Computing, AI-driven development, and automation through tech blogs, engineering articles, and emerging practices.",
+      "Passionate about designing modern AI-powered cloud platforms. Actively exploring Cloud Computing, AI-driven development, and automation through tech blogs, engineering articles, and emerging practices.",
     hobbies: ["Photography", "Cooking", "Gardening"],
   },
 };

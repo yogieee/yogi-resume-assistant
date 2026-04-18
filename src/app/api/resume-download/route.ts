@@ -47,7 +47,7 @@ export async function POST(req: Request) {
     }
 
     // Read and return the PDF
-    const filePath = join(process.cwd(), "public", "Yoganandgovind-resume.pdf");
+    const filePath = join(process.cwd(), "public", "YoganandGovind_Resume.pdf");
     const fileBuffer = await readFile(filePath);
 
     return new NextResponse(fileBuffer, {

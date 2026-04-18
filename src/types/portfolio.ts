@@ -61,7 +61,7 @@ export interface Interests {
 }
 
 export interface ContactInfo {
-  type: "email" | "linkedin" | "github" | "phone";
+  type: "email" | "linkedin" | "github" | "phone" | "portfolio";
   label: string;
   value: string;
   url: string;
