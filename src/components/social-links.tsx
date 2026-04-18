@@ -1,4 +1,4 @@
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, Globe } from "lucide-react";
 
 import { LinkedinIcon } from "@/components/icons/linkedin-icon";
 import { GithubIcon } from "@/components/icons/github-icon";
@@ -12,6 +12,7 @@ const iconMap: Record<
   phone: Phone,
   linkedin: LinkedinIcon,
   github: GithubIcon,
+  portfolio: Globe,
 };
 
 export function SocialLinks({ contacts }: { contacts: ContactInfo[] }) {
