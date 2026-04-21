@@ -17,7 +17,7 @@ export function HelpOutput() {
           Psst... try these hidden commands:
         </div>
         <div className="text-console-text-dim/40 text-xs">
-          sudo &middot; matrix &middot; whoami &middot; 404 &middot; hack &middot; coffee &middot; ping
+          sudo &middot; matrix &middot; whoami &middot; 404 &middot; hack &middot; coffee &middot; ping &middot; ls &middot; date &middot; git log &middot; rm -rf /
         </div>
       </div>
     </div>

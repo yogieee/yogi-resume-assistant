@@ -39,6 +39,10 @@ const EASTER_EGGS = new Set([
   "hack",
   "coffee",
   "ping",
+  "ls",
+  "date",
+  "git log",
+  "rm -rf /",
 ]);
 
 /**
