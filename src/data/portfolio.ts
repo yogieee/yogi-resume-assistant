@@ -329,6 +329,13 @@ Designed and deployed as a multi-tenant, serverless SaaS platform enabling busin
       value: "yoganandgovind.me",
       url: "https://www.yoganandgovind.me",
     },
+
+    {
+      type: "blog",
+      label: "Blog",
+      value: "dev.to/yogieee",
+      url: "https://dev.to/yogieee",
+    },
   ],
 
   education: [

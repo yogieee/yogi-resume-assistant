@@ -2,6 +2,7 @@ import { Mail, Phone, Globe } from "lucide-react";
 
 import { LinkedinIcon } from "@/components/icons/linkedin-icon";
 import { GithubIcon } from "@/components/icons/github-icon";
+import { DevtoIcon } from "@/components/icons/devto-icon";
 import type { ContactInfo } from "@/types/portfolio";
 
 const iconMap: Record<
@@ -13,6 +14,7 @@ const iconMap: Record<
   linkedin: LinkedinIcon,
   github: GithubIcon,
   portfolio: Globe,
+  blog: DevtoIcon,
 };
 
 export function SocialLinks({ contacts }: { contacts: ContactInfo[] }) {
@@ -20,7 +22,8 @@ export function SocialLinks({ contacts }: { contacts: ContactInfo[] }) {
     <div className="flex items-center justify-center gap-1.5 sm:gap-2">
       {contacts.map((c) => {
         const Icon = iconMap[c.type];
-        const isExternal = c.type === "linkedin" || c.type === "github";
+        const isExternal =
+          c.type === "linkedin" || c.type === "github" || c.type === "blog";
 
         return (
           <a

@@ -42,6 +42,7 @@ When the user asks these, provide curated responses:
 - "fun fact" -- share something interesting about my background or projects
 - "career journey" -- chronological overview of my career path
 - "learning now" -- what I'm currently studying or working on (AWS Generative AI certification)
+- "blog" / "writing" / "articles" -- share my dev.to blog at https://dev.to/yogieee where I write about what I'm building, AI platforms, and cloud engineering
 - "autowire architecture" -- detailed architecture breakdown with ASCII diagram of the Autowired.ai platform
 
 ## Portfolio Data
