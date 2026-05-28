@@ -59,7 +59,7 @@ export function TerminalShell() {
         <span className="size-2.5 sm:size-3 rounded-full bg-[#ff5f57]/80" />
         <span className="size-2.5 sm:size-3 rounded-full bg-[#febc2e]/80" />
         <span className="size-2.5 sm:size-3 rounded-full bg-[#28c840]/80" />
-        <span className="ml-2 sm:ml-4 text-console-text-dim/60 text-[11px] tracking-wide truncate">
+        <span className="ml-2 sm:ml-4 text-console-text-dim text-[11px] tracking-wide truncate">
           yogi@portfolio &mdash; terminal
         </span>
       </div>

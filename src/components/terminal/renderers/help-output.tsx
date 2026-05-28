@@ -13,10 +13,10 @@ export function HelpOutput() {
         ))}
       </div>
       <div className="mt-3 pt-2 border-t border-console-border/30 space-y-1">
-        <div className="text-console-text-dim/60 text-xs italic">
+        <div className="text-console-text-dim text-xs italic">
           Psst... try these hidden commands:
         </div>
-        <div className="text-console-text-dim/40 text-xs">
+        <div className="text-console-text-dim/70 text-xs">
           sudo &middot; matrix &middot; whoami &middot; 404 &middot; hack &middot; coffee &middot; ping &middot; ls &middot; date &middot; git log &middot; rm -rf /
         </div>
       </div>

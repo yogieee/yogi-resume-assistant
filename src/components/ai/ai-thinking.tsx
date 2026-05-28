@@ -10,7 +10,7 @@ export function AiThinking() {
       transition={{ duration: 0.2 }}
       className="flex items-center gap-2 py-2 px-2"
     >
-      <span className="text-console-text-dim/60 text-xs">yogi-ai &gt;</span>
+      <span className="text-console-text-dim text-xs">yogi-ai &gt;</span>
       <div className="flex items-center gap-1">
         {[0, 1, 2].map((i) => (
           <motion.span

@@ -63,7 +63,7 @@ export const TerminalInput = forwardRef<TerminalInputHandle, TerminalInputProps>
             <span className="hidden sm:inline">yogi@portfolio</span>
             <span className="sm:hidden">yogi</span>
           </span>
-          <span className="text-console-text-dim/50 select-none shrink-0">&nbsp;%&nbsp;</span>
+          <span className="text-console-text-dim select-none shrink-0">&nbsp;%&nbsp;</span>
           <div className="relative flex-1">
             <input
               ref={inputRef}
@@ -96,7 +96,7 @@ export const TerminalInput = forwardRef<TerminalInputHandle, TerminalInputProps>
               className="w-full bg-transparent border-none outline-none ring-0 text-console-text caret-glow-green focus:outline-none focus:ring-0"
             />
             {ghostSuffix && (
-              <span className="pointer-events-none absolute top-0 left-0 whitespace-pre text-console-text-dim/30">
+              <span className="pointer-events-none absolute top-0 left-0 whitespace-pre text-console-text-dim/50">
                 <span className="invisible">{value}</span>
                 {ghostSuffix}
               </span>

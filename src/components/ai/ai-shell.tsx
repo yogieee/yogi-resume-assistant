@@ -64,7 +64,7 @@ export function AiShell({ active, onSwitchToTerminal }: AiShellProps) {
         <span className="size-2.5 sm:size-3 rounded-full bg-[#ff5f57]/80" />
         <span className="size-2.5 sm:size-3 rounded-full bg-[#febc2e]/80" />
         <span className="size-2.5 sm:size-3 rounded-full bg-[#28c840]/80" />
-        <span className="ml-2 sm:ml-4 text-console-text-dim/60 text-[11px] tracking-wide truncate">
+        <span className="ml-2 sm:ml-4 text-console-text-dim text-[11px] tracking-wide truncate">
           yogi@portfolio &mdash; ai
         </span>
       </div>
@@ -131,7 +131,7 @@ export function AiShell({ active, onSwitchToTerminal }: AiShellProps) {
           className="flex items-center"
         >
           <span className="text-glow-cyan font-bold select-none">ask</span>
-          <span className="text-console-text-dim/50 select-none">
+          <span className="text-console-text-dim select-none">
             &nbsp;&gt;&nbsp;
           </span>
           <input
@@ -146,7 +146,7 @@ export function AiShell({ active, onSwitchToTerminal }: AiShellProps) {
             }
             spellCheck={false}
             autoComplete="off"
-            className="flex-1 bg-transparent border-none outline-none ring-0 text-console-text caret-glow-cyan placeholder:text-console-text-dim/30 focus:outline-none focus:ring-0 disabled:opacity-40"
+            className="flex-1 bg-transparent border-none outline-none ring-0 text-console-text caret-glow-cyan placeholder:text-console-text-dim/50 focus:outline-none focus:ring-0 disabled:opacity-40"
           />
         </form>
       </div>

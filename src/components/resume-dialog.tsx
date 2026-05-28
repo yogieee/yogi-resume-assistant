@@ -124,7 +124,7 @@ export function ResumeDialog({ open, onClose }: ResumeDialogProps) {
 
             {/* Body */}
             <form onSubmit={handleSubmit} className="p-4 sm:p-5 space-y-4">
-              <p className="text-console-text-dim/70 text-xs leading-relaxed">
+              <p className="text-console-text-dim text-xs leading-relaxed">
                 Enter your details to access the resume. You&apos;ll get the PDF
                 instantly.
               </p>
@@ -144,7 +144,7 @@ export function ResumeDialog({ open, onClose }: ResumeDialogProps) {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Your name"
-                  className="w-full px-3 py-2.5 text-sm bg-console-bg/80 border border-console-border/50 rounded-lg text-console-text placeholder:text-console-text-dim/40 focus:outline-none focus:border-glow-green/40 focus:shadow-glow-sm transition-all"
+                  className="w-full px-3 py-2.5 text-sm bg-console-bg/80 border border-console-border/50 rounded-lg text-console-text placeholder:text-console-text-dim/60 focus:outline-none focus:border-glow-green/40 focus:shadow-glow-sm transition-all"
                 />
                 {errors.name && (
                   <p className="text-xs text-glow-red">{errors.name}</p>
@@ -165,7 +165,7 @@ export function ResumeDialog({ open, onClose }: ResumeDialogProps) {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
-                  className="w-full px-3 py-2.5 text-sm bg-console-bg/80 border border-console-border/50 rounded-lg text-console-text placeholder:text-console-text-dim/40 focus:outline-none focus:border-glow-green/40 focus:shadow-glow-sm transition-all"
+                  className="w-full px-3 py-2.5 text-sm bg-console-bg/80 border border-console-border/50 rounded-lg text-console-text placeholder:text-console-text-dim/60 focus:outline-none focus:border-glow-green/40 focus:shadow-glow-sm transition-all"
                 />
                 {errors.email && (
                   <p className="text-xs text-glow-red">{errors.email}</p>

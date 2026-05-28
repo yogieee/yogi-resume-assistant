@@ -75,7 +75,7 @@ export const TerminalOutputEntry = memo(function TerminalOutputEntry({ entry }: 
       {entry.command !== undefined && (
         <div className="text-console-text">
           <span className="text-glow-green font-bold">yogi@portfolio</span>
-          <span className="text-console-text-dim/50"> % </span>
+          <span className="text-console-text-dim"> % </span>
           <span className="text-glow-cyan">{entry.command}</span>
         </div>
       )}

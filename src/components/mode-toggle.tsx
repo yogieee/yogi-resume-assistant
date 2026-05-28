@@ -66,7 +66,7 @@ export function ModeToggle({ mode, onToggle }: ModeToggleProps) {
             animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
             exit={{ opacity: 0, filter: "blur(4px)" }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="text-[11px] text-console-text-dim/70 hidden sm:inline"
+            className="text-[11px] text-console-text-dim hidden sm:inline"
           >
             {transitioning}
           </motion.span>

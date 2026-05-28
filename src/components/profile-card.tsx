@@ -44,7 +44,7 @@ export function ProfileCard() {
           <div className="size-5 rounded bg-glow-green/15 flex items-center justify-center">
             <span className="text-[10px] font-bold text-glow-green">Y</span>
           </div>
-          <span className="text-[11px] text-console-text-dim/60 font-mono">
+          <span className="text-[11px] text-console-text-dim font-mono">
             {about.name.toLowerCase().replace(/\s+/g, "")}
           </span>
         </div>
@@ -58,7 +58,7 @@ export function ProfileCard() {
 
         {/* Badge footer */}
         <div className="px-3 pb-3">
-          <div className="flex items-center gap-1 text-[11px] text-console-text-dim/60">
+          <div className="flex items-center gap-1 text-[11px] text-console-text-dim">
             <MapPin className="size-3 shrink-0" />
             <span>{about.location}</span>
           </div>

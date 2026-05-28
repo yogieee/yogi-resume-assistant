@@ -26,7 +26,7 @@ export function AiWelcome({ onStarterClick }: AiWelcomeProps) {
         <h2 className="text-glow-cyan font-bold text-sm tracking-tight">
           Yogi AI &mdash; Portfolio Assistant
         </h2>
-        <p className="text-console-text-dim/70 text-xs mt-1.5 leading-relaxed">
+        <p className="text-console-text-dim text-xs mt-1.5 leading-relaxed">
           Ask me anything about Yoganand&apos;s experience, projects, and skills
         </p>
       </div>
@@ -43,7 +43,7 @@ export function AiWelcome({ onStarterClick }: AiWelcomeProps) {
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
             onClick={() => onStarterClick(text)}
-            className="px-2.5 py-1.5 sm:px-3 sm:py-2 text-xs rounded-lg border border-console-border/50 text-console-text-dim/80 hover:text-glow-green hover:border-glow-green/30 hover:bg-glow-green/5 hover:shadow-glow-sm transition-all duration-200 cursor-pointer"
+            className="px-2.5 py-1.5 sm:px-3 sm:py-2 text-xs rounded-lg border border-console-border/50 text-console-text-dim hover:text-glow-green hover:border-glow-green/30 hover:bg-glow-green/5 hover:shadow-glow-sm transition-all duration-200 cursor-pointer"
           >
             {text}
           </motion.button>

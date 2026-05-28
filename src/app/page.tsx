@@ -43,7 +43,7 @@ export default function Home() {
           className="relative hidden md:flex flex-col border-r border-console-border/30 min-h-0 h-full overflow-hidden"
         >
           <BadgeLoader />
-          <p className="absolute bottom-4 left-0 right-0 text-center text-[10px] text-console-text-dim/40 tracking-[0.15em] uppercase pointer-events-none">
+          <p className="absolute bottom-4 left-0 right-0 text-center text-[10px] text-console-text-dim tracking-[0.15em] uppercase pointer-events-none">
             Interactive 3D Badge &mdash; Drag to play
           </p>
         </motion.div>
