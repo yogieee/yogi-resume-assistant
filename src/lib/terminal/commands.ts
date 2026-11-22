@@ -23,6 +23,7 @@ export type CommandName = keyof typeof COMMANDS;
 const ALIASES: Record<string, CommandName> = {
   autowired: "projects",
   autowire: "projects",
+  signoff: "projects",
   "hire me": "hire",
   hireme: "hire",
   collaborate: "hire",

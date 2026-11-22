@@ -98,7 +98,7 @@ const INTENT_RULES: IntentRule[] = [
   },
   {
     intent: "projects",
-    keywords: ["projects", "autowire", "portfolio", "built", "created"],
+    keywords: ["projects", "autowire", "signoff", "prompt injection", "portfolio", "built", "created"],
     patterns: [/what (have|has) (you|yogi) (built|made|created)/i],
   },
   {

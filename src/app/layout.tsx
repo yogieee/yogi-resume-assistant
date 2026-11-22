@@ -28,6 +28,8 @@ export const metadata: Metadata = {
     "AI Platform Engineer",
     "AWS",
     "Autowired.ai",
+    "Signoff",
+    "AI Security",
     "Portfolio",
     "IBM Curam",
     "Serverless",
@@ -47,7 +49,7 @@ export const metadata: Metadata = {
     siteName: "Yoganand Govind — Developer Portfolio",
     title: "Yoganand Govind | Senior Software Developer & Cloud Architect",
     description:
-      "12+ years building enterprise platforms. Creator of Autowired.ai. AWS certified. Explore my work through an interactive developer console.",
+      "12+ years building enterprise platforms. Founder of Signoff, creator of Autowired.ai. AWS certified. Explore my work through an interactive developer console.",
     images: [
       {
         url: "/og-image.png",
@@ -61,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Yoganand Govind | Senior Software Developer",
     description:
-      "12+ years building enterprise platforms. Creator of Autowired.ai. AWS certified. Explore my work through an interactive developer console.",
+      "12+ years building enterprise platforms. Founder of Signoff, creator of Autowired.ai. AWS certified. Explore my work through an interactive developer console.",
     images: ["/og-image.png"],
   },
   icons: {

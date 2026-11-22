@@ -69,7 +69,7 @@ export default function OgImage() {
           <span style={{ color: "#334155" }}>|</span>
           <span style={{ color: "#94a3b8" }}>AWS certified</span>
           <span style={{ color: "#334155" }}>|</span>
-          <span style={{ color: "#94a3b8" }}>Creator of Autowired.ai</span>
+          <span style={{ color: "#94a3b8" }}>Founder of Signoff · Creator of Autowired.ai</span>
         </div>
 
         <div style={{ display: "flex", fontSize: 20, gap: 8 }}>

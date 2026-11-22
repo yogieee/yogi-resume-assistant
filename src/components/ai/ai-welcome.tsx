@@ -8,6 +8,7 @@ interface AiWelcomeProps {
 
 const starters = [
   "What can Yoganand build for me?",
+  "Tell me about Signoff",
   "Tell me about Autowired.ai",
   "What cloud technologies does he use?",
   "Why should I hire Yoganand?",
